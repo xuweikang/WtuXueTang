@@ -9,7 +9,7 @@ import course_list from './pages/nav2/course_list.vue'
 import course_dsh from './pages/nav2/course_dsh.vue'
 import course_wtg from './pages/nav2/course_wtg.vue'
 import course_detail from './pages/nav2/course_detail.vue'
-import Page6 from './pages/nav3/Page6.vue'
+import comment from './pages/nav3/comment.vue'
 import echarts from './pages/charts/echarts.vue'
 import config from './pages/config.vue'
 let routes = [
@@ -57,7 +57,7 @@ let routes = [
         iconCls: 'fa fa-address-card',
         leaf: true,//只有一个节点
         children: [
-            { path: '/page6', component: Page6, name: '导航三' }
+            { path: '/comment', component: comment, name: '评论中心' }
         ]
     },
     {
