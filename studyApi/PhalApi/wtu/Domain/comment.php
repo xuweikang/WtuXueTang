@@ -18,5 +18,31 @@ class Domain_Comment
 
 		return $rs;
 	}
+
+
+	//获取文章评论列表
+	public function getComment($c_id){
+
+		$model = new Model_Comment();
+		$rs = $model->getComment($c_id);
+		return $rs;
+	}
+
+
+	//删除评论
+	public function delComment($id){
+
+		$model = new Model_Comment();
+		$rs = $model -> delComment($id);
+		return $rs;
+	}
+
+	//批量删除
+	public function batchDelComment($ids){
+		$model = new Model_Comment();
+		$rs = $model -> batchDelComment($ids);
+		return $rs;
+
+	}
 }
 

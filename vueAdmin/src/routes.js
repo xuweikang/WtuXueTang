@@ -10,7 +10,7 @@ import course_dsh from './pages/nav2/course_dsh.vue'
 import course_wtg from './pages/nav2/course_wtg.vue'
 import course_detail from './pages/nav2/course_detail.vue'
 import comment from './pages/nav3/comment.vue'
-import echarts from './pages/charts/echarts.vue'
+import xiti from './pages/nav4/xiti.vue'
 import config from './pages/config.vue'
 let routes = [
 
@@ -63,10 +63,10 @@ let routes = [
     {
         path: '/',
         component: Home,
-        name: 'Charts',
+        name: '习题中心',
         iconCls: 'fa fa-bar-chart',
         children: [
-            { path: '/echarts', component: echarts, name: 'echarts' }
+            { path: '/xiti', component: xiti, name: '习题中心' }
         ]
     },
     {
@@ -78,7 +78,7 @@ let routes = [
             { path: '/config', component: config, name: 'config' }
         ]
     },
-      {
+    {
         path: '/',
         component: Home,
         name: '课程详细',

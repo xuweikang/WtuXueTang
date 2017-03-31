@@ -29,10 +29,48 @@ class Model_Comment extends PhalApi_Model_NotORM{
     }
 
    //获取文章评论列表
-    public function getComment(){
-        $rs=DI()->notorm->comment_title
-            ->select('*')
-            ->fetchRows();
+    public function getComment($c_id){
+        if($c_id){
+            $rs=DI()->notorm->comment_title
+                ->select('*')
+                ->where("c_id = ?",$c_id)
+                ->fetchRows();
+        }else{
+            $rs=DI()->notorm->comment_title
+                ->select('*')
+                ->order("c_id desc")
+                ->fetchRows();
+        }
         return $rs;
+    }
+
+    //删除评论
+    public function delComment($id){
+        $rs1=DI()->notorm->comment_title
+            ->where('id= ?',$id)
+            ->delete();
+        $rs2=DI()->notorm->course_comment
+            ->where('comment_id= ?',$id)
+            ->delete();
+
+        if($rs1==false || $rs2==false){
+            return 'delete error';
+        }else{
+            return 'delete success';
+        }
+    }
+
+    //批量删除
+    public function batchDelComment($ids){
+
+        $idArr = explode(',',$ids);
+        for($index=0;$index<count($idArr);$index++){
+            $rs1 =DI()->notorm->comment_title
+                ->where('id= ?',$idArr[$index])
+                ->delete();
+            $rs2=DI()->notorm->course_comment
+                ->where('comment_id= ?',$idArr[$index])
+                ->delete();
+        }
     }
 }

@@ -35,3 +35,9 @@ export const removeCourse = params => {return instance.get(base+'?service=Course
 export const examineCourse = params => {return instance.get(base+'?service=Course.examineCourse',{params:params})};
 
 export const batchExamineCourse = params =>{return instance.get(base+'?service=Course.batchExamineCourse',{params:params})};
+
+export const getComments = params =>{return instance.get(base+'?service=Comment.getComment',{params:params})};
+
+export const delComment= params =>{return instance.get(base+'?service=Comment.delComment',{params:params})};
+
+export const batchDelComment= params =>{return instance.get(base+'?service=Comment.batchDelComment',{params:params})};

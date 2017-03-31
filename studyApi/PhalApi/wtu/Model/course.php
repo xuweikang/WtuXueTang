@@ -51,7 +51,7 @@ class Model_Course extends PhalApi_Model_NotORM{
             ->where('c_id= ?',$course_id)
             ->delete();
         if($rs1==false || $rs2==false || $rs3==false){
-            return 'delete success';
+            return 'delete error';
         }
 
     }
