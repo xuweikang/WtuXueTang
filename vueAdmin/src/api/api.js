@@ -3,7 +3,7 @@ var qs = require('qs');
 
 
 var instance = axios.create({
-    headers: {'content-type': 'application/x-www-form-urlencoded'}
+	headers: {'content-type': 'application/x-www-form-urlencoded'}
 });
 
 let base = 'http://localhost/studyApi/PhalApi/Public/';
@@ -41,3 +41,11 @@ export const getComments = params =>{return instance.get(base+'?service=Comment.
 export const delComment= params =>{return instance.get(base+'?service=Comment.delComment',{params:params})};
 
 export const batchDelComment= params =>{return instance.get(base+'?service=Comment.batchDelComment',{params:params})};
+
+export const getExercise= params =>{return instance.get(base+'?service=Exercise.getExercise',{params:params})};
+
+export const delExercise= params =>{return instance.get(base+'?service=Exercise.delExercise',{params:params})};
+
+export const batchDelExercise= params =>{return instance.get(base+'?service=Exercise.batchDelExercise',{params:params})};
+
+export const updateExercise= params =>{return instance.get(base+'?service=Exercise.updateExercise',{params:params})};
