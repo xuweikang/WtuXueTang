@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb8f88b7-8b36-4736-8672-44eebd7b6958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/exercise.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/exercise.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vueAdmin/src/api/api.js" afterPath="$PROJECT_DIR$/vueAdmin/src/api/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vueAdmin/src/pages/nav4/xiti.vue" afterPath="$PROJECT_DIR$/vueAdmin/src/pages/nav4/xiti.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/.idea/workspace.xml" afterPath="$PROJECT_DIR$/studyFront/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/index.html" afterPath="$PROJECT_DIR$/studyFront/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vueAdmin/.idea/workspace.xml" afterPath="$PROJECT_DIR$/vueAdmin/.idea/workspace.xml" />
     </list>
     <ignored path="wtuStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,19 +29,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="comment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="45" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-52.46154">
+            <state vertical-scroll-proportion="0.0">
               <caret line="62" column="1" selection-start-line="7" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
               <folding />
             </state>
@@ -49,7 +41,7 @@
       <file leaf-file-name="exercise.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/exercise.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.076923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
               <folding />
             </state>
@@ -59,28 +51,50 @@
       <file leaf-file-name="exercise.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/exercise.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.461538">
+            <state vertical-scroll-proportion="0.0">
               <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exercise.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exercise.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/exercise.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.0625">
-              <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/User.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.692308">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state vertical-scroll-proportion="4.0036764">
+              <caret line="104" column="32" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="32" />
+              <folding>
+                <element signature="e#7#85#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/Public/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/Public/init.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -89,21 +103,9 @@
       <file leaf-file-name="course.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-78.69231">
+            <state vertical-scroll-proportion="0.0">
               <caret line="93" column="34" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.23077">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="e#6#64#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +113,7 @@
       <file leaf-file-name="course.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-99.84615">
+            <state vertical-scroll-proportion="0.0">
               <caret line="124" column="9" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
               <folding>
                 <marker date="1490853600901" expanded="true" signature="1540:1653" placeholder="select kc.* ..course_configure..." />
@@ -124,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/User.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.8461537">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="125" selection-end-column="5" />
+              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -142,7 +144,6 @@
         <option value="D:/Sublime Text3/Data/Packages/Package Control/Package Control.sublime-settings" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/User.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/User.php" />
-        <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php" />
@@ -152,6 +153,8 @@
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/exercise.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/exercise.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/exercise.php" />
+        <option value="$PROJECT_DIR$/studyApi/PhalApi/Public/init.php" />
+        <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php" />
       </list>
     </option>
   </component>
@@ -195,8 +198,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,10 +297,6 @@
               <option name="myItemId" value="wtu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -322,6 +321,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wtuStudy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wtuStudy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studyApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhalApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,11 +404,10 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19593148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20396146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -398,6 +418,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -418,13 +439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="39" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -668,13 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40441176">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/Demo/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -689,18 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36397058">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,23 +707,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="45" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.23077">
+        <state vertical-scroll-proportion="0.0">
           <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#64#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.692308">
+        <state vertical-scroll-proportion="0.0">
           <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
         </state>
@@ -732,7 +727,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-78.69231">
+        <state vertical-scroll-proportion="0.0">
           <caret line="93" column="34" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="34" />
           <folding />
         </state>
@@ -740,7 +735,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-52.46154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="62" column="1" selection-start-line="7" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
           <folding />
         </state>
@@ -748,7 +743,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-99.84615">
+        <state vertical-scroll-proportion="0.0">
           <caret line="124" column="9" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
           <folding>
             <marker date="1490853600901" expanded="true" signature="1540:1653" placeholder="select kc.* ..course_configure..." />
@@ -756,17 +751,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8461537">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="125" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/exercise.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
           <folding />
         </state>
@@ -774,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/exercise.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.461538">
+        <state vertical-scroll-proportion="0.0">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
@@ -782,9 +769,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/exercise.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0625">
-          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/Public/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8461537">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.0036764">
+          <caret line="104" column="32" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="32" />
+          <folding>
+            <element signature="e#7#85#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,6 +7,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>武汉纺织大学edx</title>
 
+    <link href="static/css/header.css" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -18,51 +20,84 @@
     <![endif]-->
 </head>
 <body>
+ <header id="header" class="header">
+    <div class="header_top">
+        <nav class="navbar navbar-default" role="navigation" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+             <div class="container">
+                 <div class="row">
+                     <div class=" col-sm-3" >
+                         <a class="toggleButton ">
+                            <span class="sh"></span>
+                         </a>
+                         <a class="navbar-brand" href="#" style="color: white">Home</a>
+                         <div class="clearfix"></div>
+                     </div>
+                     <!-- Collect the nav links, forms, and other content for toggling -->
+                     <div class="pull-right" >
+                         <ul class="nav navbar-nav col-sm-offset-3 " style="line-height: 50px">
+                             <li class="search_input"> <input type="text" name="name" id="inputID" class="form-control" value="" title="" required="required" placeholder="Search"><a class="search_hid"><span class="glyphicon glyphicon-search"></span></a></li>
+                             <li class="search"><button class="btn"><span class="glyphicon glyphicon-search"></span><br/>Search</a></button>
+                             </li>
+                             <li><a href="http://localhost:63342/studyFront/static/view/login.html">登录</a></li>
+                             <li><a href="#">注册</a></li>
+                         </ul>
+                     </div><!-- /.navbar-collapse -->
+                 </div>
 
-<div class="container">
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Home</a>
-        </div>
+             </div>
+        </nav>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </nav>
-</div>
+ </header>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+ <script>
+     $(function(){
+
+         //navbar 按钮
+         var toggleFlag;
+         $('.toggleButton').click(function(){
+             if($(this).find('span').attr('class').indexOf('sh')!=-1){
+                 toggleFlag='cha';
+                 $(this).find('span').removeClass('sh').addClass('cha');
+                 $(this).css('right','229px');
+                 $('#header .navbar-default .navbar-nav').css('width','215px');
+                 setTimeout(function(){$(' #header .search_hid').show()},400)
+             }else {
+                 toggleFlag='shu';
+                 $(this).find('span').removeClass('cha').addClass('sh')
+                 $(this).css('right','32px');
+                 $('#header .navbar-default .navbar-nav').css('width','0');
+                 $(' #header .search_hid').hide();
+             }
+         });
+
+         //检测浏览器窗口变化
+         $(window).resize(function(){
+             if($(window).width()<=768){
+                 $('#header .search_input').css('display','list-item');
+//                 $('#header .navbar-default .navbar-nav').css('width','0');
+                 if(toggleFlag=='cha'){
+                     $('#header .navbar-default .navbar-nav').css('width','215px');
+                     $('.toggleButton').css('right','229px');
+                 }
+                 else {
+                     $('#header .navbar-default .navbar-nav').css('width','0');
+                     $('.toggleButton').css('right','32px');
+                 }
+
+             }
+             else{
+                 $('#header .navbar-default .navbar-nav').css('width','385px');
+                 $('.toggleButton').css('right','229px');
+                 $(' #header .search_hid').hide();
+             }
+         });
+     })
+ </script>
 </body>
 </html>

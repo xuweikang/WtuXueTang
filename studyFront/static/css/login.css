@@ -1,0 +1,44 @@
+body{
+    background-color: #1F2D3D!important;
+}
+.form{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-clip: padding-box;
+    margin-bottom: 20px;
+    background-color: #F9FAFC;
+    margin: 180px auto;
+    border: 2px solid #8492A6;
+    width: 440px;
+    padding: 35px 35px 15px 35px;
+    position: absolute;
+    left:0;
+    right:0;
+    height: 467px;
+}
+
+.form h4{
+    margin: 0px auto 40px auto;
+    text-align: center;
+    color: #505458;
+    font-weight: bolder;
+}
+.form .btn{
+    width: 368px;
+}
+.form .turn-right{
+    margin: 18px 287px;
+    width: 83px;
+}
+.form .turn-left{
+    margin: 18px 0;
+    width: 83px;
+}
+.form_login .alert{
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    width: 263px;
+    display: none;
+}
+

@@ -1,0 +1,100 @@
+
+#header .navbar-default{
+    background: #303d4a;
+    border: 0;
+    border-radius: 0;
+}
+#header .navbar-default li .btn{
+    border:0;
+    background: #303d4a;
+    color: #fff;
+    outline: none;
+}
+#header a{color: #fff}
+#header .form-control{
+    display: inline-block;
+}
+
+#header .search_hid{display: none}
+#header .toggleButton{
+    display: inline-block;
+    position: absolute;
+    right: 32px;
+    top: 11px;
+    width: 28px;
+    height: 31px;
+    padding:13px 30px 7px 0px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+#header .toggleButton span.sh:before{
+    box-sizing: border-box;
+    top: -9px;
+}
+#header .toggleButton span.cha:before{
+  transform: rotate(45deg);
+}
+#header .toggleButton span.sh:after,#header .toggleButton span.sh:before,#header .toggleButton span.sh,#header .toggleButton span.cha:after,#header .toggleButton span.cha:before,#header .toggleButton span.cha{
+    cursor: pointer;
+    height: 3px;
+    width: 28px;
+    right: 0;
+    background: #c9c9c9;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 500ms ease-in-out;
+}
+#header .toggleButton span.cha{
+    background-color: transparent;
+
+}
+#header .toggleButton span.sh:after{
+    top: 9px;;
+}
+#header .toggleButton span.cha:after{
+    transform: rotate(-45deg);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    #header .navbar-default .navbar-nav{
+       position: fixed;
+        height: 100%;
+        background: #252b31;
+        right: 0;
+        top: 0;
+        width: 0;
+        margin: 0;
+        transition: all 0.4s ease-in-out;
+    }
+    #header .search_input{
+        display: block;
+    }
+    #header .search_input input{
+        width: 170px;
+        margin-left: 19px;
+        border-radius: 10px;
+    }
+    #header .search{
+        display: none;
+    }
+    #header .search_hid{
+        display: none;    position: absolute;
+        top: 7px;
+        right: 31px;
+        color: red;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    #header .toggleButton{
+       display: none;
+    }
+}
+
