@@ -56,6 +56,36 @@
 #header .toggleButton span.cha:after{
     transform: rotate(-45deg);
 }
+#header .basic_sign{
+    height: 60px;
+    cursor: pointer;
+}
+#header .basic_sign .userinfo{
+    line-height: 60px;
+    color: #fff;
+}
+#header .basic_sign .userinfo img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 10px 0px 10px 10px;
+    float: right;
+}
+#header ul.dropMenu{
+    width: 100px;
+    position: absolute;
+    border: 1px solid #d1dbe5;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12), 0 0 6px rgba(0,0,0,.12);
+    padding: 6px 11px;
+    line-height: 33px;
+    margin-top: 7px;
+}
+#header ul.dropMenu li{
+    list-style: none;
+}
+#header ul.dropMenu li a{
+    color: #000;
+}
 
 
 
@@ -88,6 +118,9 @@
         right: 31px;
         color: red;
         cursor: pointer;
+    }
+    #header .pull-right{
+        margin-right: 22px;
     }
 }
 

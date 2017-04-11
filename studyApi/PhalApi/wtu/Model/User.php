@@ -48,7 +48,7 @@ class Model_User extends PhalApi_Model_NotORM
 
     }
 
-    //注册添加用户
+    //注册添加用户  role:1管理员 2学生  3教师
     public function registerUser($name,$user_pwd,$sex,$role,$email,$tx_url){
         $data = array(
             'name'=>$name,

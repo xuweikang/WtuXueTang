@@ -20,84 +20,199 @@
     <![endif]-->
 </head>
 <body>
- <header id="header" class="header">
+<header id="header" class="header">
     <div class="header_top">
-        <nav class="navbar navbar-default" role="navigation" >
+        <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-             <div class="container">
-                 <div class="row">
-                     <div class=" col-sm-3" >
-                         <a class="toggleButton ">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-sm-3 col-xs-3">
+                        <a class="toggleButton ">
                             <span class="sh"></span>
-                         </a>
-                         <a class="navbar-brand" href="#" style="color: white">Home</a>
-                         <div class="clearfix"></div>
-                     </div>
-                     <!-- Collect the nav links, forms, and other content for toggling -->
-                     <div class="pull-right" >
-                         <ul class="nav navbar-nav col-sm-offset-3 " style="line-height: 50px">
-                             <li class="search_input"> <input type="text" name="name" id="inputID" class="form-control" value="" title="" required="required" placeholder="Search"><a class="search_hid"><span class="glyphicon glyphicon-search"></span></a></li>
-                             <li class="search"><button class="btn"><span class="glyphicon glyphicon-search"></span><br/>Search</a></button>
-                             </li>
-                             <li><a href="http://localhost:63342/studyFront/static/view/login.html">登录</a></li>
-                             <li><a href="#">注册</a></li>
-                         </ul>
-                     </div><!-- /.navbar-collapse -->
-                 </div>
+                        </a>
+                        <a class="navbar-brand" href="#" style="color: white">Home</a>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="pull-right">
+                        <ul class="nav navbar-nav col-sm-offset-3 " style="line-height: 50px">
+                            <li class="search_input"><input type="text" name="name" id="inputID" class="form-control"
+                                                            value="" title="" required="required"
+                                                            placeholder="Search"><a class="search_hid"><span
+                                    class="glyphicon glyphicon-search"></span></a></li>
+                            <li class="search">
+                                <button class="btn"><span class="glyphicon glyphicon-search"></span><br/>Search</a>
+                                </button>
+                            </li>
+                            <li><a href="http://localhost:63342/studyFront/static/view/login.html">登录</a></li>
+                            <li><a href="http://localhost:63342/studyFront/static/view/login.html">注册</a></li>
+                        </ul>
+                        <div class="basic_sign">
+                             <span class="userinfo">
+                                 <img src="" alt="">
+                                 <span></span>
+                             </span>
+                        </div>
+                        <ul class="dropMenu" style="display: none">
+                            <li><a href="">我的消息</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
+                            <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
+                            <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
 
-             </div>
+            </div>
         </nav>
     </div>
 
- </header>
+</header>
+
+<div class="slate">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myTx" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">上传头像</h4>
+            </div>
+            <form id="uploadForm">
+                <div class="modal-body">
+                        <input type="file" name="file" id="txFile" style="border: 0">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary upload-tx">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
- <script>
-     $(function(){
+<script>
+    $(function () {
+        //navbar 按钮
+        var toggleFlag;
+        $('.toggleButton').click(function () {
+            if ($(this).find('span').attr('class').indexOf('sh') != -1) {
+                toggleFlag = 'cha';
+                $(this).find('span').removeClass('sh').addClass('cha');
+                $(this).css('right', '229px');
+                $('#header .navbar-default .navbar-nav').css('width', '215px');
+                setTimeout(function () {
+                    $(' #header .search_hid').show()
+                }, 400)
+            } else {
+                toggleFlag = 'shu';
+                $(this).find('span').removeClass('cha').addClass('sh')
+                $(this).css('right', '32px');
+                $('#header .navbar-default .navbar-nav').css('width', '0');
+                $(' #header .search_hid').hide();
+            }
+        });
 
-         //navbar 按钮
-         var toggleFlag;
-         $('.toggleButton').click(function(){
-             if($(this).find('span').attr('class').indexOf('sh')!=-1){
-                 toggleFlag='cha';
-                 $(this).find('span').removeClass('sh').addClass('cha');
-                 $(this).css('right','229px');
-                 $('#header .navbar-default .navbar-nav').css('width','215px');
-                 setTimeout(function(){$(' #header .search_hid').show()},400)
-             }else {
-                 toggleFlag='shu';
-                 $(this).find('span').removeClass('cha').addClass('sh')
-                 $(this).css('right','32px');
-                 $('#header .navbar-default .navbar-nav').css('width','0');
-                 $(' #header .search_hid').hide();
-             }
-         });
+        //是否显示隐藏注册登录按钮
+        var user = sessionStorage.getItem('user');
+        var tx_url = '';
+        if (user) {
+            user = JSON.parse(user);
+            $('.navbar-nav').hide();
+            $('.toggleButton').hide();
+            if (user.tx_url == null) {
+                tx_url = 'http://localhost/studyApi/PhalApi/upload/wtu/2017/03/21/1490067030.jpg';
+            } else {
+                tx_url = user.tx_url;
+            }
+            $('.userinfo').find('img').attr('src', tx_url);
+            $('.userinfo').find('span').html(user.name);
+        } else {
+            $('.basic_sign').hide();
+        }
+        //下拉菜单
+        $('.userinfo').click(function () {
+            $('.dropMenu').slideToggle();
+        })
 
-         //检测浏览器窗口变化
-         $(window).resize(function(){
-             if($(window).width()<=768){
-                 $('#header .search_input').css('display','list-item');
+        //退出登录
+        $('.exit').click(function () {
+            sessionStorage.removeItem('user');
+            window.location.reload();
+        });
+
+        //上传头像
+        $('.upload-tx').click(function () {
+            var fd = new FormData($( "#uploadForm" )[0]);
+            $.ajax(
+                    {
+                        type: 'POST',
+                        url: 'http://localhost:80/studyApi/PhalApi/Public/?service=User.uploadTx&name=' + user.name,
+                        data: fd,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            if (data['data'] != 0) {
+                                var user = sessionStorage.getItem('user');
+                                user = JSON.parse(user);
+                                user.tx_url = data['data'];
+                                sessionStorage.setItem('user', JSON.stringify(user));
+                                $('.userinfo img').attr('src',data['data']);
+                            }
+                        },
+                        error: function () {
+                            alert('error')
+                        }
+                    }
+            );
+            $('#myTx').modal('hide')
+        });
+
+
+        //检测浏览器窗口变化
+        $(window).resize(function () {
+            if ($(window).width() <= 768) {
+                $('#header .search_input').css('display', 'list-item');
 //                 $('#header .navbar-default .navbar-nav').css('width','0');
-                 if(toggleFlag=='cha'){
-                     $('#header .navbar-default .navbar-nav').css('width','215px');
-                     $('.toggleButton').css('right','229px');
-                 }
-                 else {
-                     $('#header .navbar-default .navbar-nav').css('width','0');
-                     $('.toggleButton').css('right','32px');
-                 }
+                if (toggleFlag == 'cha') {
+                    $('#header .navbar-default .navbar-nav').css('width', '215px');
+                    $('.toggleButton').css('right', '229px');
+                }
+                else {
+                    $('#header .navbar-default .navbar-nav').css('width', '0');
+                    $('.toggleButton').css('right', '32px');
+                }
 
-             }
-             else{
-                 $('#header .navbar-default .navbar-nav').css('width','385px');
-                 $('.toggleButton').css('right','229px');
-                 $(' #header .search_hid').hide();
-             }
-         });
-     })
- </script>
+            }
+            else {
+                $('#header .navbar-default .navbar-nav').css('width', '385px');
+                $('.toggleButton').css('right', '229px');
+                $(' #header .search_hid').hide();
+            }
+        });
+    })
+</script>
 </body>
 </html>

@@ -157,7 +157,6 @@ class Api_User extends PhalApi_Api
 
         //上传表单名
         $r = DI()->ucloud->upfile($this->file);
-
         $domain = new Domain_User();
         $res = $domain->updateTx($this->name, $r['url']);
         if ($res == 1) {
@@ -165,6 +164,8 @@ class Api_User extends PhalApi_Api
         } else {
             return 0;
         }
+
+
 
 
     }
