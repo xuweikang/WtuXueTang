@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb8f88b7-8b36-4736-8672-44eebd7b6958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/User.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/.idea/workspace.xml" afterPath="$PROJECT_DIR$/studyFront/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/index.html" afterPath="$PROJECT_DIR$/studyFront/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/static/css/header.css" afterPath="$PROJECT_DIR$/studyFront/static/css/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/static/view/login.html" afterPath="$PROJECT_DIR$/studyFront/static/view/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vueAdmin/src/pages/config.vue" afterPath="$PROJECT_DIR$/vueAdmin/src/pages/config.vue" />
-    </list>
+    <list default="true" id="eb8f88b7-8b36-4736-8672-44eebd7b6958" name="Default" comment="" />
     <ignored path="wtuStudy.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -408,8 +399,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20663811" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

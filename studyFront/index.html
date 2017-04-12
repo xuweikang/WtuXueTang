@@ -8,7 +8,9 @@
     <title>武汉纺织大学edx</title>
 
     <link href="static/css/header.css" rel="stylesheet">
-
+    <link href="static/css/slate.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <link href="static/css/typography.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,7 +28,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="container">
                 <div class="row">
-                    <div class=" col-sm-3 col-xs-3">
+                    <div class=" col-sm-3 col-xs-12">
                         <a class="toggleButton ">
                             <span class="sh"></span>
                         </a>
@@ -65,18 +67,386 @@
             </div>
         </nav>
     </div>
-
+     <div class="head_wrap">
+         <div class="container">
+            <div class="row">
+                <div class="left">
+                    <div class="logo"><a href=""><img src="static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="">课程</a></li>
+                            <li><a href="">讲座</a></li>
+                            <li><a href="">通知</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="right pull-right">
+                    <input type="text" name="search" class="form-control" placeholder="Search" style="width: 115px">
+                    <button class="btn" style="background: none;color: #000"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
+                    </button>
+                </div>
+            </div>
+         </div>
+     </div>
 </header>
-
 <div class="slate">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-8"></div>
-            <div class="col-sm-4"></div>
+        <div class="row header_news_panel">
+            <!-- Tab panes -->
+            <div class="col-sm-8 tab-content tab-content_mob-p0">
+                <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <img src="static/image/slide1.jpg" alt="main img" class="tab-pane__img">
+                    <div class="header_news_text tab-pane__block">
+                        <p class="tab-pane__category yel_line">People</p>
+                        <a class="tab-pane__title">The Visions's Rainbow</a>
+                        <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="profile">
+                    <img src="static/image/slide2.jpg" alt="main img" class="tab-pane__img">
+                    <div class="header_news_text tab-pane__block">
+                        <p class="tab-pane__category yel_line">People</p>
+                        <a class="tab-pane__title">The Visions's Rainbow</a>
+                        <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="messages">
+                    <img src="static/image/slide1.jpg" alt="main img" class="tab-pane__img">
+                    <div class="header_news_text tab-pane__block">
+                        <p class="tab-pane__category yel_line">People</p>
+                        <a class="tab-pane__title">The Visions's Rainbow</a>
+                        <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="settings">
+                    <img src="static/image/slide2.jpg" alt="main img" class="tab-pane__img">
+                    <div class="header_news_text tab-pane__block">
+                        <p class="tab-pane__category yel_line">People</p>
+                        <a class="tab-pane__title">The Visions's Rainbow</a>
+                        <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END Tab panes -->
+            <!-- Nav tabs -->
+            <div class="col-sm-4 news-tabs">
+                <p class="news-tabs__title h2">推荐课程</p>
+                <ul class="news-tabs__nav nav nav-tabs shadow_text" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#home" role="tab" data-toggle="tab">
+                            <span class="time">today, 10:11</span>
+                            这是一个推荐课程介绍
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#profile" role="tab" data-toggle="tab">
+                            <span class="time">today, 11:22</span>
+                            这是一个推荐课程介绍
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#messages" role="tab" data-toggle="tab">
+                            <span class="time">today, 12:33</span>
+                            这是一个推荐课程介绍
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#settings" role="tab" data-toggle="tab">
+                            <span class="time">today, 14:44</span>
+                            这是一个推荐课程介绍
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END Nav tabs -->
         </div>
     </div>
 </div>
 
+<div class="cat">
+    <div class="container">
+        <div class="row">
+            <div class="fl">
+                <h4>分类</h4>
+                <div class="fl-c">
+                    <a href="">全部 <span>100</span></a>
+                    <a href="">web前端 <span>12</span></a>
+                    <a href="">nodeJs <span>14</span></a>
+                    <a href="">文学 <span>12</span></a>
+                    <a href="">英语 <span>12</span></a>
+                    <a href="">Java <span>3</span></a>
+
+                </div>
+            </div>
+            <div class="zt">
+                <h4>状态</h4>
+                <div class="zt-c">
+                    <a href="">全部 <span>100</span></a>
+                    <a href="">开课中 <span>75</span></a>
+                    <a href="">即将开课 <span>10</span></a>
+                    <a href="">已结课 <span>15</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="course">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="" class="thumbnail__link">
+                        <img src="static/image/news2.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+                            <p class="news__category yellow-line">Economy</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">Еhe world's economy is improving and good times</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 12:11</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>11
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>1.1k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news3.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+                            <p class="news__category yellow-line">Economy</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">The euro needs to everyone in a large amount</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 19:30</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>294
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>2.9k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news4.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+
+                            <p class="news__category yellow-line">People</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">NEWS: People began to love each other in large numbers online
+                                    (Video)</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 2:39</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>9
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>1.3k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news5.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+                            <p class="news__category yellow-line">Sport</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">Athletes are confident of victory in all competitions</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 14:34</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>58
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>8.8k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news6.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+
+                            <p class="news__category yellow-line">People</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">All the people of the world love each other and say hello</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 12:37</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>20
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>1.2k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news7.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+                            <p class="news__category yellow-line">Economy</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">Attention: The poor become rich, rich richer</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 11:30</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>21
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>1.9k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news8.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+
+                            <p class="news__category yellow-line">Sport</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">The winners of sports games already online (Video)</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 10:36</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>17
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>2.0k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail thumbnail_small">
+                    <a href="news.html" class="thumbnail__link">
+                        <img src="static/image/news9.jpg" height="153" width="270" alt="News">
+                    </a>
+                    <div class="caption thumbnail__caption">
+                        <div class="news caption__news">
+                            <p class="news__category yellow-line">Business</p>
+                            <a href="news.html" class="news__link">
+                                <p class="news__text">The best exchange rates and motivation for you</p>
+                            </a>
+                        </div>
+                        <div class="posted">
+                            <span class="posted__date">today, 12:30</span>
+                            <ul class="posted__icon">
+                                <li>
+                                                <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                </li>
+                                <li>
+                                                <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -113,106 +483,6 @@
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-    $(function () {
-        //navbar 按钮
-        var toggleFlag;
-        $('.toggleButton').click(function () {
-            if ($(this).find('span').attr('class').indexOf('sh') != -1) {
-                toggleFlag = 'cha';
-                $(this).find('span').removeClass('sh').addClass('cha');
-                $(this).css('right', '229px');
-                $('#header .navbar-default .navbar-nav').css('width', '215px');
-                setTimeout(function () {
-                    $(' #header .search_hid').show()
-                }, 400)
-            } else {
-                toggleFlag = 'shu';
-                $(this).find('span').removeClass('cha').addClass('sh')
-                $(this).css('right', '32px');
-                $('#header .navbar-default .navbar-nav').css('width', '0');
-                $(' #header .search_hid').hide();
-            }
-        });
-
-        //是否显示隐藏注册登录按钮
-        var user = sessionStorage.getItem('user');
-        var tx_url = '';
-        if (user) {
-            user = JSON.parse(user);
-            $('.navbar-nav').hide();
-            $('.toggleButton').hide();
-            if (user.tx_url == null) {
-                tx_url = 'http://localhost/studyApi/PhalApi/upload/wtu/2017/03/21/1490067030.jpg';
-            } else {
-                tx_url = user.tx_url;
-            }
-            $('.userinfo').find('img').attr('src', tx_url);
-            $('.userinfo').find('span').html(user.name);
-        } else {
-            $('.basic_sign').hide();
-        }
-        //下拉菜单
-        $('.userinfo').click(function () {
-            $('.dropMenu').slideToggle();
-        })
-
-        //退出登录
-        $('.exit').click(function () {
-            sessionStorage.removeItem('user');
-            window.location.reload();
-        });
-
-        //上传头像
-        $('.upload-tx').click(function () {
-            var fd = new FormData($( "#uploadForm" )[0]);
-            $.ajax(
-                    {
-                        type: 'POST',
-                        url: 'http://localhost:80/studyApi/PhalApi/Public/?service=User.uploadTx&name=' + user.name,
-                        data: fd,
-                        contentType: false,
-                        processData: false,
-                        success: function (data) {
-                            if (data['data'] != 0) {
-                                var user = sessionStorage.getItem('user');
-                                user = JSON.parse(user);
-                                user.tx_url = data['data'];
-                                sessionStorage.setItem('user', JSON.stringify(user));
-                                $('.userinfo img').attr('src',data['data']);
-                            }
-                        },
-                        error: function () {
-                            alert('error')
-                        }
-                    }
-            );
-            $('#myTx').modal('hide')
-        });
-
-
-        //检测浏览器窗口变化
-        $(window).resize(function () {
-            if ($(window).width() <= 768) {
-                $('#header .search_input').css('display', 'list-item');
-//                 $('#header .navbar-default .navbar-nav').css('width','0');
-                if (toggleFlag == 'cha') {
-                    $('#header .navbar-default .navbar-nav').css('width', '215px');
-                    $('.toggleButton').css('right', '229px');
-                }
-                else {
-                    $('#header .navbar-default .navbar-nav').css('width', '0');
-                    $('.toggleButton').css('right', '32px');
-                }
-
-            }
-            else {
-                $('#header .navbar-default .navbar-nav').css('width', '385px');
-                $('.toggleButton').css('right', '229px');
-                $(' #header .search_hid').hide();
-            }
-        });
-    })
-</script>
+<script src="static/js/index.js"></script>
 </body>
 </html>
