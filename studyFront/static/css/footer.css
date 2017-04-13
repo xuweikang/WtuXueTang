@@ -1,0 +1,13 @@
+footer{
+    height: 100px;
+    margin: 60px 0;
+}
+footer .link a{
+   margin: 0 18px;
+}
+footer address img{
+    width: 60px;
+}
+footer address{
+    margin-top: 24px;
+}

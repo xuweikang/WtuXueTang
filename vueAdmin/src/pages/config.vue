@@ -45,7 +45,7 @@
             }
 
             var formData=new FormData($( "#uploadForm" )[0]);
-            console.log(formData)
+            // console.log(formData)
             var _self=this;
             var user = sessionStorage.getItem('user');
             var name;
