@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>课程详情页</title>
+
+    <link href="../static/css/header.css" rel="stylesheet">
+    <link href="../static/css/slate.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/footer.css" rel="stylesheet">
+    <link href="../static/css/typography.css" rel="stylesheet">
+    <link href="../static/css/teacher.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/sweetalert2.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="app">
+    <header id="header" class="header">
+    <div class="header_top">
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="row">
+                    <div class=" col-sm-3 col-xs-12">
+                        <a class="toggleButton ">
+                            <span class="sh"></span>
+                        </a>
+                        <a class="navbar-brand" href="#" style="color: white">Home</a>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="pull-right">
+                        <ul class="nav navbar-nav col-sm-offset-3 " style="line-height: 50px">
+                            <li class="search_input"><input type="text" name="name" id="inputID" class="form-control"
+                                                            value="" title="" required="required"
+                                                            placeholder="Search"><a class="search_hid"><span
+                                    class="glyphicon glyphicon-search"></span></a></li>
+                            <li class="search">
+                                <button class="btn"><span class="glyphicon glyphicon-search"></span><br/>Search</a>
+                                </button>
+                            </li>
+                            <li><a href="http://localhost:63342/studyFront/dist/login.html">登录</a></li>
+                            <li><a href="http://localhost:63342/studyFront/dist/login.html">注册</a></li>
+                        </ul>
+                        <div class="basic_sign">
+                             <span class="userinfo">
+                                 <img src="" alt="">
+                                 <span></span>
+                             </span>
+                        </div>
+                        <ul class="dropMenu" style="display: none">
+                            <li><a href="">我的消息</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
+                            <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
+                            <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <div class="head_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="left">
+                    <div class="logo"><a href=""><img src="../static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="">课程</a></li>
+                            <li><a href="">讲座</a></li>
+                            <li><a href="">通知</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="right pull-right">
+                    <input type="text" name="search" class="form-control" placeholder="Search" style="width: 115px">
+                    <button class="btn" style="background: none;color: #000"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div class="container">
+        <table class="table table-hover" style="margin-top: 30px">
+            <thead>
+            <tr>
+                <th>课程</th>
+                <th>编号</th>
+                <th>课程介绍</th>
+                <th>课程类别</th>
+                <th>开课时间</th>
+                <th>结束时间</th>
+                <th>审核状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>前端开发</td>
+                <td>T_1024</td>
+                <td>这是一个介绍前端开发的实例视频，适合人群为所有水平的学生</td>
+                <td>web开发</td>
+                <td>2017-03-14 16:05:50</td>
+                <td>2017-03-14 16:05:50</td>
+                <td>正在审核中</td>
+                <td><a href="javascript:void(0)" data-toggle="modal" data-target="#edit">编辑</a>/<a href="javascript:void(0)" class="del_course">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="content">
+            <h3>前端开发</h3>
+            <div class="empty">
+                <div>
+                    You haven't added any content to this course yet.
+                    <button class="btn btn-primary">+新建章</button>
+                </div>
+            </div>
+            <div class="sj">
+                <ul class="sj_list">
+                    <li class="chapter">
+                       <h4 class="pull-left">
+                           <span class="glyphicon glyphicon-triangle-right xl-toggle" aria-hidden="true"></span>
+                           <span class="chapter_name"><input type="text" value="章" style="border: none"></span>
+                       </h4>
+                        <div class="del_chapter pull-right"><span class="glyphicon glyphicon-trash del-t"></span></div>
+                        <ul class="unit">
+                            <li class="unit-list">
+                                <h4 class="pull-left">
+                                    <span class="chapter_name">单元</span>
+                                </h4>
+                                <div class="file_upload">
+                                    上传课程视频:<input type="file" value="上传课程">
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="sj_btn">
+                    <button class="btn btn-primary sj_btn_1">+新建章</button>
+                    <button class="btn btn-primary sjxt_btn_1"  data-toggle="modal" data-target="#xiti">+新建习题</button>
+                    <button class="btn btn-primary xsgl_btn_1">该课程学生管理</button>
+                    <button class="btn btn-primary sh_btn_1">提交审核</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">修改课程</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text"  class="form-control" required="required" placeholder="课程名称" value="前端开发">
+                    <br>
+                    <input type="text"  class="form-control" required="required" placeholder="课程编号（唯一）" value="T_1024" disabled>
+                    <br>
+                    <input type="date"  class="form-control" required="required" placeholder="开课时间">
+                    <br>
+                    <input type="date" class="form-control" required="required" placeholder="结课时间">
+                    <br>
+                    <input type="text"  class="form-control" required="required" placeholder="课程类别" value="web开发">
+                    <br>
+                    <input type="text"  class="form-control" required="required" placeholder="课程介绍" value="这是一个介绍前端开发的实例视频，适合人群为所有水平的学生">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">提交修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="xiti" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">习题</h4>
+                </div>
+                <div class="modal-body">
+                    习题内容：<input type="text"  class="form-control" required="required" placeholder="习题内容">
+                    <br>
+                    正确答案：<input type="text"  class="form-control" required="required" placeholder="正确答案">
+                    <br>
+                    错误答案一：<input type="text"  class="form-control" required="required" placeholder="错误答案一">
+                    <br>
+                    错误答案二：<input type="text" class="form-control" required="required" placeholder="错误答案二">
+                    <br>
+                    错误答案三：<input type="text"  class="form-control" required="required" placeholder="错误答案三">
+                    <br>
+                    分值：<input type="number"  class="form-control" required="required">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">上传</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <div class="container">
+        <div class="footer_top"><span>友情链接:</span><span class="link"><a href="http://www.wtu.edu.cn" target="_blank">武汉纺织大学</a><a target="_blank" href="http://tsinghua.xuetangx.com/">清华大学慕课</a><a
+                href="https://open.edx.org/" target="_blank">open edx</a><a
+                href="http://www.jikexueyuan.com/" target="_blank">极客学院</a></span></div>
+        <div class="footer_wrap">
+            <address><img src="../static/image/logo.jpg" alt=""></address>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/sweetalert2.min.js"></script>
+
+<script src="../static/js/index.js"></script>
+<script>
+   $('.del_course').click(function(){
+       swal({
+           title:'警告',
+           text:'确定要删除本课程吗？',
+           type:'warning',
+           showCancelButton:true,
+
+       }).then(function(isConfirm){
+           if (isConfirm === true) {
+               swal(
+                       'Deleted!',
+                       'Your imaginary file has been deleted.',
+                       'success'
+               );
+
+           } else if (isConfirm === false) {
+               swal(
+                       'Cancelled',
+                       'Your imaginary file is safe :)',
+                       'error'
+               );
+
+           } else {
+               // Esc, close button or outside click
+               // isConfirm is undefined
+           }
+       })
+   });
+
+
+   $('.xl-toggle').click(function(){
+       if($(this).attr('class').indexOf('xl-toggle-rotate')!=-1){
+           $(this).removeClass('xl-toggle-rotate');
+           $(this).parent().siblings('.unit').hide();
+       }else {
+           $(this).addClass('xl-toggle-rotate');
+           $(this).parent().siblings('.unit').show();
+       }
+   });
+    $('.sj_btn_1').click(function(){
+
+        $('.sj_list').append($('.chapter').eq(0).clone(true))
+
+    });
+
+  $('.del-t').click(function(){
+      var _this=$(this).parent().parent();
+      swal({
+          title:'警告',
+          text:'删除将无法找回该课程？',
+          type:'warning',
+          showCancelButton:true,
+
+      }).then(function(isConfirm){
+          if (isConfirm === true) {
+              _this.remove();
+              swal(
+                      'Deleted!',
+                      'Your imaginary file has been deleted.',
+                      'success'
+              );
+
+          }
+      })
+  });
+
+</script>
+</html>

@@ -9,11 +9,12 @@
 class Model_Comment extends PhalApi_Model_NotORM{
 
     //递归获取评论列表
-    public function getCommentList($parent_id = 0,&$result = array()){
+    public function getCommentList($comment_id,$parent_id = 0,&$result = array()){
 
             $arr=DI()->notorm->course_comment
                    ->select('*')
                    ->where('parent_id= ? ',$parent_id)
+                   ->where('comment_id=?',$comment_id)
                    ->order("create_time desc")
                    ->fetchRows();
             if(empty($arr)){
@@ -21,7 +22,7 @@ class Model_Comment extends PhalApi_Model_NotORM{
             }
             foreach ($arr as $cm) {
                 $thisArr=&$result[];
-                $cm["children"] = $this->getCommentList($cm["id"],$thisArr);
+                $cm["children"] = $this->getCommentList($comment_id,$cm["id"],$thisArr);
                 $thisArr = $cm;
             }
             return $result;

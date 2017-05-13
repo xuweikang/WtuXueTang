@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>教师详情页</title>
+
+    <link href="../static/css/header.css" rel="stylesheet">
+    <link href="../static/css/slate.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/footer.css" rel="stylesheet">
+    <link href="../static/css/typography.css" rel="stylesheet">
+    <link href="../static/css/teacher.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="app">
+    @@include('include/head.html')
+
+    <div class="newCourse">
+        <div class="container">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                发表课程
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">新建课程</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text"  class="form-control" required="required" placeholder="课程名称">
+                            <br>
+                            <input type="text"  class="form-control" required="required" placeholder="课程编号（唯一）">
+                            <br>
+                            <input type="date"  class="form-control" required="required" placeholder="开课时间">
+                            <br>
+                            <input type="date" class="form-control" required="required" placeholder="结课时间">
+                            <br>
+                            <input type="text"  class="form-control" required="required" placeholder="课程类别">
+                            <br>
+                            <input type="text"  class="form-control" required="required" placeholder="课程介绍">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary">新建课程</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="courseList">
+        <div class="container">
+            <h3>我的课程</h3>
+            <ul class="tt">
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    @@include('include/footer.html')
+</div>
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/index.js"></script>
+<script>
+
+$('.tt>li').hover(function(){
+    $(this).find('.check').show();
+},function(){
+    $(this).find('.check').hide();
+});
+</script>
+</html>

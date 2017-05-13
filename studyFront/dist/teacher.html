@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>课程介绍页</title>
+    <title>教师详情页</title>
 
     <link href="../static/css/header.css" rel="stylesheet">
     <link href="../static/css/slate.css" rel="stylesheet">
     <link href="../static/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/footer.css">
+    <link href="../static/css/footer.css" rel="stylesheet">
     <link href="../static/css/typography.css" rel="stylesheet">
-    <link href="../static/css/about.css" rel="stylesheet">
+    <link href="../static/css/teacher.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -95,67 +95,99 @@
     </div>
 </header>
 
-    <div class="course_about">
+    <div class="newCourse">
         <div class="container">
-            <div class="row course_info">
-                <h2>计算机程序设计基础(T_10255)</h2>
-                <small style="float:left;" class="from">来自:<span class="author">徐伟康</span>老师 &nbsp;&nbsp;&nbsp;&nbsp;|
-                    &nbsp;&nbsp;&nbsp;&nbsp;分类:<span class="cat">计算机基础</span></small>
-                <br><br><br>
-                <div class="col-lg-6 col-md-7 video_img"><img src="../static/image/news2.jpg" alt="" width='538' class="img-responsive"></div>
-                <div class="col-lg-6 col-md-5 info1">
-                    <h3>课程信息</h3>
-                    <hr style="border:1px solid  #e2dede">
-                    <ul>
-                        <li>
-                            <small><span class="glyphicon glyphicon-user"></span>选课人数：<span class="xkrs">110</span>
-                            </small>
-                        </li>
-                        <li>
-                            <small><span class="glyphicon glyphicon-time"></span>开课时间：<span
-                                    class="kksj">2017-02-20</span></small>
-                        </li>
-                        <li>
-                            <small><span class="glyphicon glyphicon-list-alt"></span>课程代码：<span
-                                    class="kcno">T_1024</span></small>
-                        </li>
-                        <li>
-                            <small><span class="glyphicon glyphicon-time"></span>结束时间：<span
-                                    class="jssj">2017-02-21</span></small>
-                        </li>
-                    </ul>
-                    <button class="btn btn-primary col-sm-12 col-xs-12">我要选课</button>
-                </div>
-            </div>
-            <div class="row course_introduce">
-                <div class="left col-sm-9 col-xs-12" style="padding-left: 50px!important;">
-                    <h3>课程简介</h3>
-                    <div class="content">
-                        这是一个课程介绍这是一个课程介绍这是一个课程介绍这是一个课程介绍这是一个课程介绍这是一个课程介绍这是一个课程介绍
-                    </div>
-                </div>
-                <div class="right pull-right col-xs-12">
-                    <h3>授课教师</h3>
-                    <h4><span>徐伟康</span>老师</h4>
-                </div>
-            </div>
-            <div class="row course_capter">
-                <div class="col-sm-9">
-                    <h3>课程章节</h3>
-                    <div class="content">
-                        <ul>
-                            <li>第1章 绪论</li>
-                            <li>第2章 C++简单程序设计（一）</li>
-                            <li>第3章  C++简单程序设计（二）</li>
-                            <li>第4章 函数</li>
-                            <li>第5章 类与对象</li>
-                            <li>第6章 异常处理</li>
-                        </ul>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                发表课程
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">新建课程</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text"  class="form-control" required="required" placeholder="课程名称">
+                            <br>
+                            <input type="text"  class="form-control" required="required" placeholder="课程编号（唯一）">
+                            <br>
+                            <input type="date"  class="form-control" required="required" placeholder="开课时间">
+                            <br>
+                            <input type="date" class="form-control" required="required" placeholder="结课时间">
+                            <br>
+                            <input type="text"  class="form-control" required="required" placeholder="课程类别">
+                            <br>
+                            <input type="text"  class="form-control" required="required" placeholder="课程介绍">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary">新建课程</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="courseList">
+        <div class="container">
+            <h3>我的课程</h3>
+            <ul class="tt">
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+                <li>
+                    <a href="">
+                        <h4>测试课程</h4>
+                        <div class="msg">
+                            <span class="course_author">xwk</span>
+                            <span class="course_cat">web</span>
+                            <span class="course_no">T_110</span>
+                        </div>
+                    </a>
+                    <div class="check"><a href="">在线查看</a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
 
 
     <footer>
@@ -177,5 +209,10 @@
 <script src="../static/js/index.js"></script>
 <script>
 
+$('.tt>li').hover(function(){
+    $(this).find('.check').show();
+},function(){
+    $(this).find('.check').hide();
+});
 </script>
 </html>

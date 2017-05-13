@@ -9,12 +9,12 @@ class Domain_Comment
 	//递归获取评论列表
 	//
 
-	public function getCommentList()
+	public function getCommentList($comment_id)
 	{
 
 		$model = new Model_Comment();
 
-		$rs = $model->getCommentList();
+		$rs = $model->getCommentList($comment_id);
 
 		return $rs;
 	}

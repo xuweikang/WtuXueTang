@@ -200,7 +200,8 @@ p.news__desc:hover {
 
 
 /*video*/
-.video_detail video{width: 100%}
+.video_detail .row{ margin: 0 auto!important;width: 80%}
+.video_detail video{width: 100%;}
 
 
 

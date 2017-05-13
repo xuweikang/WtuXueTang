@@ -1,0 +1,82 @@
+.video_detail ul{margin: 0;padding: 0}
+.video_detail ul li{
+    list-style: none;
+    line-height: 30px;;
+    overflow: hidden;
+}
+
+.badge{
+    background-color: #c7c2c2!important;
+    margin-right: 14px!important;
+}
+.video-after .tab-content a{
+    color: #000!important;
+}
+.video-after .tab-pane{
+    margin-top: 10px;
+}
+.video-after .tab-content li.active a{
+    color: #337ab7!important;
+}
+#course_list li{
+    width: 600px;;
+
+}
+#course_list li p{
+    margin-left: 32px;
+}
+.video-after .tx{float: left}
+.video-after .tx img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 10px 0px 10px 10px;
+}
+.video-after .lesson-info{
+    float: left;
+    margin-left: 16px;
+    margin-top: -5px;
+    width: 80%;
+}
+.video-after .lesson-info .time{
+    color: #8e8e8e;
+}
+.video-after .lesson-info .time .author{
+    margin-right: 34px;
+    color: #000;
+}
+.video-after .lesson-number span{
+    font-size: 25px;
+}
+
+#homework ul li{
+    cursor: pointer;
+}
+#homework .answer-sel{
+    color: red;
+    margin-left: 15px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 588px) {
+    .video-after .lesson-info{
+        width: 58%;
+    }
+}
+@media screen and (max-width: 630px){
+    #course_list li{
+        width:100%;
+    }
+}
+@media screen and (max-width: 720px){
+
+    .video_detail .row{
+        width: 100%;
+    }
+
+}

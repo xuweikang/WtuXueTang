@@ -1,0 +1,44 @@
+.course_about{margin-top: 40px}
+.course_info{
+    padding:30px 31px 45px 31px;
+    border: 1px solid #dcd8d8;
+}
+.course_info .from span {
+    color: #337ab7;
+}
+.course_about li{
+    list-style: none;
+    line-height: 42px;
+}
+.course_about li span{
+    color: #999;
+}
+.course_about li .glyphicon{
+    margin-right: 10px;
+}
+.course_introduce{
+    margin-top: 20px;
+}
+.course_introduce .left,.course_introduce .right{border: 1px solid #dcd8d8;padding: 5px 5px 17px}
+.course_introduce .right{
+    width: 24%;
+}
+.course_capter li{
+    position: relative;
+}
+.course_capter li:before{
+    content: '';
+    width: 2px;
+    height: 11px;
+    left: -10px;
+    background: #63318F;
+    position: absolute;
+    top: 14px;
+}
+
+@media screen and (max-width: 764px) {
+    .course_introduce .right{
+        width: 100%;
+        padding-left: 50px!important;
+    }
+}

@@ -11,10 +11,10 @@ return array(
      */
     'servers' => array(
         'db_demo' => array(                         //服务器标记
-            'host'      => '192.168.32.128',             //数据库域名
-            'name'      => 'wtuXueTang',               //数据库名字
-            'user'      => 'xwk',                  //数据库用户名
-            'password'  => 'xwk',	                    //数据库密码
+            'host'      => '127.0.0.1',             //数据库域名
+            'name'      => 'wtuxuetang',               //数据库名字
+            'user'      => 'root',                  //数据库用户名
+            'password'  => 'xwk123',	                    //数据库密码
             'port'      => '3306',                  //数据库端口
             'charset'   => 'UTF8',                  //数据库字符集
         ),

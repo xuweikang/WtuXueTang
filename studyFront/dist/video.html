@@ -10,9 +10,9 @@
     <link href="../static/css/header.css" rel="stylesheet">
     <link href="../static/css/slate.css" rel="stylesheet">
     <link href="../static/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/footer.css">
+    <link href="../static/css/footer.css" rel="stylesheet">
     <link href="../static/css/typography.css" rel="stylesheet">
-
+    <link href="../static/css/video.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -95,11 +95,134 @@
     </div>
 </header>
 
-   <div class="video_detail">
-       <div class="container">
-           <video src="http://localhost/vueAdmin/static/video/ogg-19M.ogg" controls="controls"></video>
-       </div>
-   </div>
+
+    <div class="video_detail">
+        <div class="container">
+            <div class="row">
+                <h3>C++简单程序设计（一）</h3>
+                <video src="http://localhost/vueAdmin/static/video/ogg-19M.ogg" controls="controls"></video>
+            </div>
+            <div class="row">
+                <div class="video-after">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#course_list"  role="tab" data-toggle="tab">课时列表</a></li>
+                        <li role="presentation"><a href="#comment"  role="tab" data-toggle="tab">问题讨论</a></li>
+                        <li role="presentation"><a href="#homework"  role="tab" data-toggle="tab">课后习题</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="course_list">
+                            <ul>
+                                <li class="active"><span class="badge">1</span><a href="">绪论</a><p>这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍</p></li>
+                                <li><span class="badge">2</span><a href="">绪论2</a><p>这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍</p></li>
+                                <li><span class="badge">3</span><a href="">绪论3</a><p>这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍</p></li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="comment">
+                            <button class="btn btn-primary">发布问题</button>
+                            <ul>
+                                <li>
+                                    <div class="tx"><img src="http://localhost/studyApi/PhalApi/upload/wtu/2017/04/11/1491899687.jpg" alt=""></div>
+                                    <div class="lesson-info">
+                                        <h3><a href="">前端框架怎么学</a></h3>
+                                        <div class="timeandicon">
+                                            <div class="time"><span class="author">xwk123</span>最后回答:<span class="lastTime">2017-03-29 11:09:51</span></div>
+                                            <div class="question">
+                                                <p></p>
+                                                <p>新建一个项目无法运行，每次都报错Error:Failed to find: com.android.support:appcompat-v7:22.+asdasdasdadwda111111</p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-number">
+                                        <span>1</span>
+                                        <p>讨论中</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tx"><img src="http://localhost/studyApi/PhalApi/upload/wtu/2017/04/11/1491899687.jpg" alt=""></div>
+                                    <div class="lesson-info">
+                                        <h3><a href="">前端框架怎么学</a></h3>
+                                        <div class="timeandicon">
+                                            <div class="time"><span class="author">xwk123</span>最后回答:<span class="lastTime">2017-03-29 11:09:51</span></div>
+                                            <div class="question">
+                                                <p></p>
+                                                <p>新建一个项目无法运行，每次都报错Error:Failed to find: com.android.support:appcompat-v7:22.+</p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-number">
+                                        <span>1</span>
+                                        <p>讨论中</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tx"><img src="http://localhost/studyApi/PhalApi/upload/wtu/2017/04/11/1491899687.jpg" alt=""></div>
+                                    <div class="lesson-info">
+                                        <h3><a href="">前端框架怎么学</a></h3>
+                                        <div class="timeandicon">
+                                            <div class="time"><span class="author">xwk123</span>最后回答:<span class="lastTime">2017-03-29 11:09:51</span></div>
+                                            <div class="question">
+                                                <p></p>
+                                                <p>新建一个项目无法运行，每次都报错Error:Failed to find: com.android.support:appcompat-v7:22.+</p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-number">
+                                        <span>1</span>
+                                        <p>讨论中</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="homework">
+                            <ol>
+                                <li>
+                                    <span class="ti_title">兔子和乌龟比什么绝对不会输？</span><span class="a_score">30</span><span class="answer-sel"></span>
+                                    <ul>
+                                        <li><span class="sel">A</span>. <span class="answer">仰卧起坐</span></li>
+                                        <li><span class="sel">B</span>. <span class="answer">跳远</span></li>
+                                        <li><span class="sel">C</span>. <span class="answer">跳高</span></li>
+                                        <li><span class="sel">D</span>. <span class="answer">赛跑</span></li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <span class="ti_title">小明妈妈：“小明赶紧切土豆去！”小明：“切，我不切！提问：小明要不要去切土豆？？</span>
+                                    <span class="a_score">30</span>'
+                                    <span class="answer-sel"></span>
+                                <ul>
+                                    <li><span class="sel">A</span>. <span class="answer">切</span></li>
+                                    <li><span class="sel">B</span>. <span class="answer">不切</span></li>
+                                    <li><span class="sel">C</span>. <span class="answer">在犹豫</span></li>
+                                    <li><span class="sel">D</span>. <span class="answer">不知道</span></li>
+                                </ul>
+
+                                </li>
+                                <li>
+                                    <span class="ti_title">1+1等于几?</span>
+                                    <span class="a_score">40</span>'
+                                    <span class="answer-sel"></span>
+
+                                    <ul>
+                                        <li><span class="sel">A</span>. <span class="answer">1</span></li>
+                                        <li><span class="sel">B</span>. <span class="answer">2</span></li>
+                                        <li><span class="sel">C</span>. <span class="answer">3</span></li>
+                                        <li><span class="sel">D</span>. <span class="answer">4</span></li>
+                                    </ul>
+
+                                </li>
+                            </ol>
+                            <button class="btn btn-primary col-sm-3 col-xs-12">提交作业</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer>
@@ -119,4 +242,11 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../static/js/index.js"></script>
+<script>
+$('#homework ul li').click(function(){
+    $(this).css('color','red').siblings().css('color','#333');
+    $(this).parent().siblings('.answer-sel').html($(this).find('.sel').html());
+})
+
+</script>
 </html>

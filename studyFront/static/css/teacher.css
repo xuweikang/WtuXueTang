@@ -1,0 +1,74 @@
+.courseList ul.tt{
+    border-radius: 3px;
+    border: 1px solid #b2b2b2;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    padding: 0;
+}
+.courseList li{
+    list-style: none;
+    border-bottom: 1px solid #b2b2b2;
+    padding: 9px 27px;
+    position: relative;
+}
+.newCourse{
+    margin-top: 50px;
+}
+.tt .check{
+    position: absolute;
+    top: 31px;
+    right: 27px;
+    display: none;
+}
+.tt .msg span{
+    color: #7f7f7f;
+}
+.tt a:hover{
+    text-decoration: none;
+}
+.empty{
+    padding: 45px 5px;
+    background: rgba(153, 153, 153, 0.35);
+    box-shadow: 1px 1px rgba(51, 51, 51, 0.48);
+    display: none;
+}
+.empty>div{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #999;
+}
+.empty button{
+    margin-left: 15px;
+}
+.sj_list .chapter,.sj_list .unit-list{
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #b2b2b2;
+    border-left: 8px solid #b2b2b2;
+    padding: 15px;
+    margin-bottom: 17px;
+}
+.sj_list .unit-list{
+
+}
+.sj_list .chapter .del_chapter {
+    position: absolute;
+    right: 37px;
+    top: 29px;
+
+}
+.sj_list .xl-toggle{
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out 0s ;
+}
+.sj_list .xl-toggle-rotate{
+    transform: rotate(90deg);
+}
+.unit{
+   margin-top: 60px;
+    display: none;
+}
+.del-t{cursor: pointer}
+.file_upload{margin-top: 52px}

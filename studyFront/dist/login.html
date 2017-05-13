@@ -152,7 +152,7 @@
                     if (res.data == 'login_err') {
                         $('.login_error').addClass('animated flipInX').show();
                     } else {
-                        window.location.href = 'http://localhost:63342/studyFront/index.html';
+                        window.location.href = 'http://localhost:63342/studyFront/dist/index.html';
                         sessionStorage.setItem('user', JSON.stringify(res.data));
                     }
                 },
@@ -244,7 +244,7 @@
                             },
                             success: function (res) {
                                 if (res.data) {
-                                    window.location.href = 'http://localhost:63342/studyFront/index.html';
+                                    window.location.href = 'http://localhost:63342/studyFront/dist/index.html';
                                     sessionStorage.setItem('user', JSON.stringify(res.data));
                                 }
                             },
