@@ -83,15 +83,15 @@
         <h4>用户登录</h4>
         <div class="form-group ">
             <input type="text" class="form-control name" aria-describedby="helpBlock2" placeholder="账号">
-            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            <span class="help-block"></span>
         </div>
         <div class="form-group">
             <input type="password" class="form-control pwd" aria-describedby="helpBlock2" placeholder="密码">
-            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            <span class="help-block"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" value="" class="primary">记住密码
+                <input type="checkbox" value="" class="primary remember">记住密码
             </label>
         </div>
         <button type="button" class="btn btn-primary login">登录</button>
@@ -133,6 +133,14 @@
         });
 
 
+        //查看是否有cookie
+        if(getCookie('login_name') && getCookie('login_pwd')){
+           $('.form_login .name').val(getCookie('login_name'));
+           $('.form_login .pwd').val(getCookie('login_pwd'));
+            $(".remember").attr('checked','checked')
+        }
+
+
         //登录
         $('.login').click(function () {
 
@@ -154,6 +162,20 @@
                     } else {
                         window.location.href = 'http://localhost:63342/studyFront/dist/index.html';
                         sessionStorage.setItem('user', JSON.stringify(res.data));
+                        if($(".remember").is(':checked')){
+                            //获取当前时间
+                            var date=new Date();
+                            var expiresDays=1;
+                            //将date设置为1天以后的时间
+                            date.setTime(date.getTime()+expiresDays*24*3600*1000);
+                        //将userId和userName两个cookie设置为1天后过期
+                            document.cookie="login_name="+$('.form_login .name').val()+";expires="+date.toGMTString();
+                            document.cookie="login_pwd="+$('.form_login .pwd').val()+";expires="+date.toGMTString();
+
+                        }else {
+
+                        }
+
                     }
                 },
                 error: function () {
@@ -270,6 +292,15 @@
 
         function closeAlert() {
             $('.login_error').fadeOut();
+        }
+        function getCookie(name){
+            var strCookie=document.cookie;
+            var arrCookie=strCookie.split("; ");
+            for(var i=0;i<arrCookie.length;i++){
+                var arr=arrCookie[i].split("=");
+                if(arr[0]==name)return arr[1];
+            }
+            return "";
         }
 
     })

@@ -18,7 +18,8 @@ class Api_Course extends PhalApi_Api
               'c_start'=>array('name'=>'c_start','type'=>'date','require'=>true,'desc' => '课程开始时间'),
               'c_end'=>array('name'=>'c_end','type'=>'date','require'=>true,'desc' => '课程结束时间'),
               'c_classify'=>array('name'=>'c_classify','require'=>true,'desc' => '课程分类'),
-              'c_introduce'=>array('name'=>'c_introduce','require'=>true,'desc' => '课程介绍')
+              'c_introduce'=>array('name'=>'c_introduce','require'=>true,'desc' => '课程介绍'),
+              'c_img'=>array('name'=>'c_img','require'=>true,'desc'=>'课程封面')
           ),
           'getCoursesList'=>array(
               'c_no'=>array('name'=>'c_no','require'=>false,'desc' => '课程编号(唯一)')
@@ -42,6 +43,12 @@ class Api_Course extends PhalApi_Api
           'batchExamineCourse'=>array(
               'courseNos'=>array('name'=>'courseNos','require'=>true,'desc'=>'课程编号数组'),
               'option'=>array('name'=>'option','require'=>true,'desc'=>'具体课程操作(2:通过，1：不通过)')
+          ),
+          'selectCourseByPM'=>array(
+
+          ),
+          'selectCourseByCat'=>array(
+
           )
       );
   }
@@ -97,5 +104,19 @@ class Api_Course extends PhalApi_Api
         $domain=new Domain_Course();
         $domain->batchExamineCourse($this->courseNos,$this->option);
 
+    }
+
+    //获取选课学生最多的前4课程
+    public function selectCourseByPM(){
+        $domain=new Domain_Course();
+        $rs=$domain->selectCourseByPM();
+        return $rs;
+    }
+
+    //按课程分类查询
+    public function selectCourseByCat(){
+        $domain=new Domain_Course();
+        $rs=$domain->selectCourseByCat();
+        return $rs;
     }
 }

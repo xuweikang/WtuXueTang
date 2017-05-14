@@ -226,7 +226,8 @@ p.news__desc:hover {
 
 .tab-pane__img {
     width: 100%;
-    max-width: 790px;
+    max-width: 760px;
+    max-height: 380px;
 }
 
 .header_news_panel {

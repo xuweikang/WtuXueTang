@@ -36,9 +36,21 @@ $(function () {
         }
         $('.userinfo').find('img').attr('src', tx_url);
         $('.userinfo').find('span').html(user.name);
+
+        //学生身份不显示该入口
+        if(user.role!=2){
+            $('.teacher_course').show();
+            $('.teacher_course_a').click(function(){
+                window.location.href='http://localhost:63342/studyFront/dist/teacher.html';
+            });
+        }else {
+            $('.teacher_course').hide();
+        }
+
     } else {
         $('.basic_sign').hide();
-        $('#header .head_wrap .right').css('display','none')
+        $('#header .head_wrap .right').css('display','none');
+
     }
     //下拉菜单
     $('.userinfo').click(function () {

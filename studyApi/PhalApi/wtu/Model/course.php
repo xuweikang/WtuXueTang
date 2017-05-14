@@ -8,14 +8,15 @@
 class Model_Course extends PhalApi_Model_NotORM{
 
     //上传课程
-    public function addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce){
+    public function addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_img){
         $data = array(
             'c_name'=>$c_name,
             'c_no'=>$c_no,
             'c_start'=>$c_start,
             'c_end'=>$c_end,
             'c_classify'=>$c_classify,
-            'c_introduce'=>$c_introduce
+            'c_introduce'=>$c_introduce,
+            'c_img'=>$c_img
 
         );
         $rs = DI()->notorm->course_configure
@@ -126,5 +127,45 @@ class Model_Course extends PhalApi_Model_NotORM{
     }
 
 
-    
+    //获取选课学生最多的前4课程
+
+
+    public function selectCourseByPM(){
+        $sql="select * from (
+
+SELECT
+	*
+FROM
+	course_configure where c_exmine=2 )table1
+INNER JOIN (
+	SELECT
+		count(*) AS num,
+		course
+	FROM
+		student_course
+	GROUP BY
+		course
+) table2 ON table1.c_no = table2.course
+GROUP BY
+	course
+ORDER BY
+	num DESC
+LIMIT 0,
+ 4 ";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
+
+
+
+    //按课程分类查询
+    public function selectCourseByCat(){
+        $sql="SELECT c_start, c_classify,COUNT(c_classify) AS num FROM course_configure GROUP BY c_classify";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
 }

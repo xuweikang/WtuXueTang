@@ -7,18 +7,19 @@
  */
 class Domain_Course{
     //上传课程
-    public function addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce){
+    public function addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_img){
         $data = array(
             'c_name'=>$c_name,
             'c_no'=>$c_no,
             'c_start'=>$c_start,
             'c_end'=>$c_end,
             'c_classify'=>$c_classify,
-            'c_introduce'=>$c_introduce
+            'c_introduce'=>$c_introduce,
+            'c_img'=>$c_img
 
         );
         $model=new Model_Course();
-        $rs=$model->addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce);
+        $rs=$model->addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_img);
         return $rs;
     }
 
@@ -94,4 +95,18 @@ class Domain_Course{
         $model->batchExamineCourse($courseNos,$con);
     }
 
+
+    //获取选课学生最多的前4课程
+    public function selectCourseByPM(){
+        $model=new Model_Course();
+        $rs=$model->selectCourseByPM();
+        return $rs;
+    }
+
+    //按课程分类查询
+    public function selectCourseByCat(){
+        $model=new Model_Course();
+        $rs=$model->selectCourseByCat();
+        return $rs;
+    }
 }

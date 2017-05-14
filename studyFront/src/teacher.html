@@ -55,10 +55,12 @@
                             <input type="text"  class="form-control" required="required" placeholder="课程类别">
                             <br>
                             <input type="text"  class="form-control" required="required" placeholder="课程介绍">
+                            <br>
+                            <input type="file" name="file" class="form-control course_img" id="file1" required="required" placeholder="课程封面">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary">新建课程</button>
+                            <button type="button" class="btn btn-primary new_course">新建课程</button>
                         </div>
                     </div>
                 </div>
@@ -131,13 +133,37 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/ajaxfileupload.js"></script>
 <script src="../static/js/index.js"></script>
 <script>
 
-$('.tt>li').hover(function(){
-    $(this).find('.check').show();
-},function(){
-    $(this).find('.check').hide();
-});
+  $(function(){
+      $('.tt>li').hover(function(){
+          $(this).find('.check').show();
+      },function(){
+          $(this).find('.check').hide();
+      });
+
+
+      $('.new_course').click(function(){
+          $.ajaxFileUpload
+          (
+                  {
+                      url: 'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourse', //用于文件上传的服务器端请求地址
+                      secureuri: false, //是否需要安全协议，一般设置为false
+                      fileElementId: 'file1', //文件上传域的ID
+                      dataType: 'json', //返回值类型 一般设置为json
+                      data:{"c_name":"","c_no":"","c_start":"","c_end":"","c_classify":"","c_introduce":"","c_img":""},
+                      success: function (data, status)  //服务器成功响应处理函数
+                      {
+
+                      },
+                      error: function (data, status, e)//服务器响应失败处理函数
+                      {
+                          alert(e);
+                      }
+      });
+  })
+
 </script>
 </html>

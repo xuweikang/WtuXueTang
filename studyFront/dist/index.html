@@ -11,6 +11,7 @@
     <link href="../static/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/footer.css">
     <link href="../static/css/typography.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/sweetalert2.min.css">
     <!-- Bootstrap -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,7 +33,7 @@
                         <a class="toggleButton ">
                             <span class="sh"></span>
                         </a>
-                        <a class="navbar-brand" href="#" style="color: white">Home</a>
+                        <a class="navbar-brand" href="http://localhost:63342/studyFront/dist/index.html" style="color: white">Home</a>
                         <div class="clearfix"></div>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,7 +57,7 @@
                              </span>
                         </div>
                         <ul class="dropMenu" style="display: none">
-                            <li><a href="">我的消息</a></li>
+                            <li class="teacher_course"><a href="javascript:void(0)" class="teacher_course_a">教师入口</a></li>
                             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
                             <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
                             <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
@@ -71,7 +72,7 @@
         <div class="container">
             <div class="row">
                 <div class="left">
-                    <div class="logo"><a href=""><img src="../static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
+                    <div class="logo"><a href="http://localhost:63342/studyFront/dist/index.html"><img src="../static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
                     <nav class="nav">
                         <ul>
                             <li><a href="">课程</a></li>
@@ -94,37 +95,33 @@
         <div class="row header_news_panel">
             <!-- Tab panes -->
             <div class="col-sm-8 tab-content tab-content_mob-p0">
-                <div role="tabpanel" class="tab-pane fade in active" id="home">
-                    <img src="../static/image/slide1.jpg" alt="main img" class="tab-pane__img">
+                <div role="tabpanel" class="tab-pane fade in active" id="home" >
+                    <img src="" alt="main img" class="tab-pane__img">
                     <div class="header_news_text tab-pane__block">
-                        <p class="tab-pane__category yel_line">People</p>
                         <a class="tab-pane__title">The Visions's Rainbow</a>
                         <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="profile">
-                    <img src="../static/image/slide2.jpg" alt="main img" class="tab-pane__img">
+                    <img src="" alt="main img" class="tab-pane__img">
                     <div class="header_news_text tab-pane__block">
-                        <p class="tab-pane__category yel_line">People</p>
                         <a class="tab-pane__title">The Visions's Rainbow</a>
                         <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="messages">
-                    <img src="../static/image/slide1.jpg" alt="main img" class="tab-pane__img">
+                    <img src="" alt="main img" class="tab-pane__img">
                     <div class="header_news_text tab-pane__block">
-                        <p class="tab-pane__category yel_line">People</p>
                         <a class="tab-pane__title">The Visions's Rainbow</a>
                         <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="settings">
-                    <img src="../static/image/slide2.jpg" alt="main img" class="tab-pane__img">
+                    <img src="" alt="main img" class="tab-pane__img">
                     <div class="header_news_text tab-pane__block">
-                        <p class="tab-pane__category yel_line">People</p>
                         <a class="tab-pane__title">The Visions's Rainbow</a>
                         <p class="tab-pane__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -137,27 +134,27 @@
                 <p class="news-tabs__title h2">推荐课程</p>
                 <ul class="news-tabs__nav nav nav-tabs shadow_text" role="tablist">
                     <li role="presentation" class="active">
-                        <a href="#home" role="tab" data-toggle="tab">
-                            <span class="time">today, 10:11</span>
-                            这是一个推荐课程介绍
+                        <a href="#home" role="tab" data-toggle="tab" class="course_list">
+                            <span class="time"></span>
+                            <span class="course_title"></span>
                         </a>
                     </li>
                     <li role="presentation">
-                        <a href="#profile" role="tab" data-toggle="tab">
-                            <span class="time">today, 11:22</span>
-                            这是一个推荐课程介绍
+                        <a href="#profile" role="tab" data-toggle="tab" class="course_list">
+                            <span class="time"></span>
+                            <span class="course_title"></span>
                         </a>
                     </li>
                     <li role="presentation">
-                        <a href="#messages" role="tab" data-toggle="tab">
-                            <span class="time">today, 12:33</span>
-                            这是一个推荐课程介绍
+                            <a href="#messages" role="tab" data-toggle="tab" class="course_list">
+                            <span class="time"></span>
+                            <span class="course_title"></span>
                         </a>
                     </li>
                     <li role="presentation">
-                        <a href="#settings" role="tab" data-toggle="tab">
-                            <span class="time">today, 14:44</span>
-                            这是一个推荐课程介绍
+                        <a href="#settings" role="tab" data-toggle="tab" class="course_list">
+                            <span class="time"></span>
+                            <span class="course_title"></span>
                         </a>
                     </li>
                 </ul>
@@ -173,22 +170,8 @@
             <div class="fl">
                 <h4>分类</h4>
                 <div class="fl-c">
-                    <a href="">全部 <span>100</span></a>
-                    <a href="">web前端 <span>12</span></a>
-                    <a href="">nodeJs <span>14</span></a>
-                    <a href="">文学 <span>12</span></a>
-                    <a href="">英语 <span>12</span></a>
-                    <a href="">Java <span>3</span></a>
+                    <a href="javascript:void(0)"><span class="cat-name-all">全部</span> <span class="cat-num-all">100</span></a>
 
-                </div>
-            </div>
-            <div class="zt">
-                <h4>状态</h4>
-                <div class="zt-c">
-                    <a href="">全部 <span>100</span></a>
-                    <a href="">开课中 <span>75</span></a>
-                    <a href="">即将开课 <span>10</span></a>
-                    <a href="">已结课 <span>15</span></a>
                 </div>
             </div>
         </div>
@@ -494,6 +477,71 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/sweetalert2.min.js"></script>
 <script src="../static/js/index.js"></script>
+<script>
+    $(function(){
+
+        //推荐课程
+        $.ajax({
+            type:'get',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByPM',
+            success:function(data){
+                console.log(data)
+                $('.course_list').each(function(x) {
+                    var time = data.data[x].c_start.split(' ')[0];
+                    $(this).find('.time').html(time);
+                    $(this).find('.course_title').html(data.data[x].c_name);
+                    $('.tab-pane__img').eq(x).attr('src', data.data[x].c_img);
+                    $('.tab-pane__title').eq(x).html(data.data[x].c_name);
+                    $('.tab-pane__text').eq(x).html(data.data[x].c_introduce)
+
+                    //推荐课程跳转
+                    $('.tab-pane__title').eq(x).click(function () {
+                        //是否登录
+                        var user = sessionStorage.getItem('user');
+                        if (user) {
+                            window.location.href = 'http://localhost:63342/studyFront/dist/about.html?c_no='+data.data[x].c_no;
+                        } else {
+                            swal({
+                                title:'提示',
+                                text:'是否要跳转到登录界面查看该课程？',
+                                type:'info',
+                                showCancelButton:true,
+
+                            }).then(function(isConfirm) {
+                                if (isConfirm === true) {
+                                    window.location.href = 'http://localhost:63342/studyFront/dist/login.html';
+                                }
+                            })
+
+                        }
+
+                    })
+                })
+            },
+            error:function(){}
+        });
+
+        //分类
+        $.ajax({
+            type:'get',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByCat',
+            success:function(data){
+//                console.log(data)
+                var sum=0;
+                //按类别分类
+                for(var i=0;i<data.data.length;i++){
+                    sum+=Number(data.data[i].num);
+                    var cat_a=$('<a href="javascript:void(0)"><span class="cat-name">'+data.data[i].c_classify+'</span> <span class="cat-num">'+data.data[i].num+'</span></a>');
+                    $('.fl-c').append(cat_a);
+                }
+
+                $('.cat-num-all').html(sum);
+            },
+            error:function(){}
+        });
+    })
+</script>
 </body>
 </html>
