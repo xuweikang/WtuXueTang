@@ -7,20 +7,17 @@
  */
 class Domain_Course{
     //上传课程
-    public function addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_img){
-        $data = array(
-            'c_name'=>$c_name,
-            'c_no'=>$c_no,
-            'c_start'=>$c_start,
-            'c_end'=>$c_end,
-            'c_classify'=>$c_classify,
-            'c_introduce'=>$c_introduce,
-            'c_img'=>$c_img
+    public function addCourse($name,$c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_exmine,$c_img){
 
-        );
         $model=new Model_Course();
-        $rs=$model->addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_img);
+        $rs=$model->addCourse($name,$c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_exmine,$c_img);
         return $rs;
+    }
+
+    //上传课程详细章节
+    public function addCourseChapter($c_id,$capter_id,$c_content,$capter_introduce,$c_url){
+      $model=new Model_Course();
+        return $model->addCourseChapter($c_id,$capter_id,$c_content,$capter_introduce,$c_url);
     }
 
     //获得所有课程列表
@@ -31,6 +28,18 @@ class Domain_Course{
 
         return $rs;
     }
+    //教师查看个人课程列表
+    public function getCourseListTeacher($name){
+        $model=new Model_Course();
+        return $model->getCourseListTeacher($name);
+    }
+    //修改课程(根据课程id)
+    public function updateCourse($course_id,$c_name,$c_no,$c_introduce,$c_classify,$c_start,$c_end){
+        $model=new Model_Course();
+
+        return $model->updateCourse($course_id,$c_name,$c_no,$c_introduce,$c_classify,$c_start,$c_end);
+    }
+
 
     //删除课程(根据课程id)
     public function removeCourse($course_id){
@@ -72,6 +81,15 @@ class Domain_Course{
         return $rss;
     }
 
+    //只查看课程章节表信息
+    public function getCourseChapter($course_id){
+        $model=new Model_Course();
+        $rs=$model->getCourseChapter($course_id);
+
+        return $rs;
+
+    }
+
     //管理员查看审核课程内容
     public function getCourseExmine($couse_id,$c_exmine){
 
@@ -102,11 +120,47 @@ class Domain_Course{
         $rs=$model->selectCourseByPM();
         return $rs;
     }
+    public function selectCourseByPMId($c_id){
+
+        $model=new Model_Course();
+        $rs=$model->selectCourseByPMId($c_id);
+        return $rs;
+    }
 
     //按课程分类查询
     public function selectCourseByCat(){
         $model=new Model_Course();
         $rs=$model->selectCourseByCat();
+        return $rs;
+    }
+
+    //学生选课
+    public function addStudentCourse($name,$course,$score,$isfill){
+        $model=new Model_Course();
+        $rs=$model->addStudentCourse($name,$course,$score,$isfill);
+        return $rs;
+    }
+
+    //获得选课学生信息
+    public function selectCourseByCourse($c_id){
+
+        $model=new Model_Course();
+        $rs=$model->selectCourseByCourse($c_id);
+        return $rs;
+    }
+
+    //修改练习题分数
+    public function markScore($name,$course,$score,$isFill){
+
+        $model=new Model_Course();
+        $rs=$model->markScore($name,$course,$score,$isFill);
+        return $rs;
+    }
+
+    public function selScore($name,$course){
+
+        $model=new Model_Course();
+        $rs=$model->selScore($name,$course);
         return $rs;
     }
 }

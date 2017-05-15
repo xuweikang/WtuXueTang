@@ -2,6 +2,14 @@
  * Created by xwk on 2017/4/12.
  */
 $(function () {
+
+    //搜索
+    $('.btn_search').click(function(){
+        //SELECT * FROM course_configure WHERE c_name LIKE '%php%'
+    });
+
+
+
     //navbar 按钮
     var toggleFlag;
     $('.toggleButton').click(function () {
@@ -41,7 +49,7 @@ $(function () {
         if(user.role!=2){
             $('.teacher_course').show();
             $('.teacher_course_a').click(function(){
-                window.location.href='http://localhost:63342/studyFront/dist/teacher.html';
+                window.location.href='http://localhost/studyFront/dist/teacher.html';
             });
         }else {
             $('.teacher_course').hide();

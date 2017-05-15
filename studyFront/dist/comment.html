@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>讨论页</title>
+
+    <link href="../static/css/header.css" rel="stylesheet">
+    <link href="../static/css/slate.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link href="../static/css/typography.css" rel="stylesheet">
+    <link href="../static/css/about.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/sweetalert2.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="app">
+    <header id="header" class="header">
+    <div class="header_top">
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="row">
+                    <div class=" col-sm-3 col-xs-12">
+                        <a class="toggleButton ">
+                            <span class="sh"></span>
+                        </a>
+                        <a class="navbar-brand" href="http://localhost/studyFront/dist/index.html" style="color: white">Home</a>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="pull-right">
+                        <ul class="nav navbar-nav col-sm-offset-3 " style="line-height: 50px">
+                            <li class="search_input"><input type="text" name="name" id="inputID" class="form-control"
+                                                            value="" title="" required="required"
+                                                            placeholder="Search"><a class="search_hid"><span
+                                    class="glyphicon glyphicon-search"></span></a></li>
+                            <li class="search">
+                                <button class="btn"><span class="glyphicon glyphicon-search"></span><br/>Search</a>
+                                </button>
+                            </li>
+                            <li><a href="http://localhost/studyFront/dist/login.html">登录</a></li>
+                            <li><a href="http://localhost/studyFront/dist/login.html">注册</a></li>
+                        </ul>
+                        <div class="basic_sign">
+                             <span class="userinfo">
+                                 <img src="" alt="">
+                                 <span></span>
+                             </span>
+                        </div>
+                        <ul class="dropMenu" style="display: none">
+                            <li class="teacher_course"><a href="javascript:void(0)" class="teacher_course_a">教师入口</a></li>
+                            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
+                            <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
+                            <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <div class="head_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="left">
+                    <div class="logo"><a href="http://localhost/studyFront/dist/index.html"><img src="../static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="">课程</a></li>
+                            <li><a href="">讲座</a></li>
+                            <li><a href="">通知</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="right pull-right">
+                    <input type="text" name="search" class="form-control" placeholder="Search" style="width: 115px">
+                    <button class="btn" style="background: none;color: #000"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+    <footer>
+    <div class="container">
+        <div class="footer_top"><span>友情链接:</span><span class="link"><a href="http://www.wtu.edu.cn" target="_blank">武汉纺织大学</a><a target="_blank" href="http://tsinghua.xuetangx.com/">清华大学慕课</a><a
+                href="https://open.edx.org/" target="_blank">open edx</a><a
+                href="http://www.jikexueyuan.com/" target="_blank">极客学院</a></span></div>
+        <div class="footer_wrap">
+            <address><img src="../static/image/logo.jpg" alt=""></address>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/sweetalert2.min.js"></script>
+<script src="../static/js/index.js"></script>

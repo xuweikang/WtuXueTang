@@ -56,6 +56,45 @@
     color: red;
     margin-left: 15px;
 }
+#comment ul{
+    padding:13px 0 0 65px;
+}
+.video_url{
+    display: none;
+}
+.answer-con{
+    display: none;
+}
+.comment_zl {
+    padding:20px 0 0 0!important; ;
+}
+.comment_zl .info .time{
+    margin-left: 18px;
+}
+.comment_zl .huifu{
+    float: right;
+    color: #999;
+    cursor: pointer
+}
+.comment_zl hr{
+  border-color: #b0b0b0;
+  margin-top: 46px;
+}
+.comment_zl .text_ar{
+    display: none;
+}
+.comment_zl textarea{
+    width: 80%;
+    margin: 40px 0 0 129px
+
+}
+.comment_zl .id{
+    display: none;
+}
+.sub_huifu{
+    cursor: pointer;
+    float: right;
+}
 
 
 

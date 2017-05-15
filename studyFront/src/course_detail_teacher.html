@@ -41,18 +41,20 @@
                 <th>开课时间</th>
                 <th>结束时间</th>
                 <th>审核状态</th>
+                <th>封面照片</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>前端开发</td>
-                <td>T_1024</td>
-                <td>这是一个介绍前端开发的实例视频，适合人群为所有水平的学生</td>
-                <td>web开发</td>
-                <td>2017-03-14 16:05:50</td>
-                <td>2017-03-14 16:05:50</td>
-                <td>正在审核中</td>
+                <td class="c_t">前端开发</td>
+                <td class="c_t">T_1024</td>
+                <td class="c_t">这是一个介绍前端开发的实例视频，适合人群为所有水平的学生</td>
+                <td class="c_t">web开发</td>
+                <td class="c_t">2017-03-14 16:05:50</td>
+                <td class="c_t">2017-03-14 16:05:50</td>
+                <td class="c_t">正在审核中</td>
+                <td class="c_t"><a href=""><img src="" alt="" width="50"></a></td>
                 <td><a href="javascript:void(0)" data-toggle="modal" data-target="#edit">编辑</a>/<a href="javascript:void(0)" class="del_course">删除</a></td>
             </tr>
             </tbody>
@@ -66,7 +68,7 @@
                 </div>
             </div>
             <div class="sj">
-                <ul class="sj_list">
+                <ul class="sj_list none-sj-list">
                     <li class="chapter">
                        <h4 class="pull-left">
                            <span class="glyphicon glyphicon-triangle-right xl-toggle" aria-hidden="true"></span>
@@ -78,21 +80,64 @@
                                 <h4 class="pull-left">
                                     <span class="chapter_name">单元</span>
                                 </h4>
+                                <div class="unit_introduce" style="margin-top: 60px">
+                                    单元介绍：<input type="text" placeholder="单元介绍">
+                                </div>
                                 <div class="file_upload">
-                                    上传课程视频:<input type="file" value="上传课程">
+                                    <div style="">
+                                        <form class="uploadForm" enctype="multipart/form-data">
+                                            <input type="file" name="file"  class="file1" required="required">
+                                        </form>
+                                        <button class="btn-primary btn video_upload">课件上传</button>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
                     </li>
                 </ul>
+                <ul class="sj_list done-sj-list">
+                    <!--<li class="chapter">-->
+                        <!--<h4 class="pull-left">-->
+                            <!--<span class="glyphicon glyphicon-triangle-right xl-toggle" aria-hidden="true"></span>-->
+                            <!--<span class="chapter_name"><input type="text" value="章" style="border: none"></span>-->
+                        <!--</h4>-->
+                        <!--<div class="del_chapter pull-right"><span class="glyphicon glyphicon-trash del-t"></span></div>-->
+                        <!--<ul class="unit">-->
+                            <!--<li class="unit-list">-->
+                                <!--<h4 class="pull-left">-->
+                                    <!--<span class="chapter_name">单元</span>-->
+                                <!--</h4>-->
+                                <!--<div class="unit_introduce" style="margin-top: 60px">-->
+                                    <!--单元介绍：<input type="text" placeholder="单元介绍">-->
+                                <!--</div>-->
+                                <!--<div class="file_upload">-->
+                                    <!--<div style="">-->
+                                        <!--<form class="uploadForm" enctype="multipart/form-data">-->
+                                            <!--<input type="file" name="file"  class="file1" required="required">-->
+                                        <!--</form>-->
+                                        <!--<button class="btn-primary btn video_upload">课件上传</button>-->
+                                    <!--</div>-->
+                                    <!--<video src="http://localhost/studyApi/PhalApi/upload/wtu/2017/05/15/1494830112.ogg" controls></video>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+
+                </ul>
 
                 <div class="sj_btn">
                     <button class="btn btn-primary sj_btn_1">+新建章</button>
                     <button class="btn btn-primary sjxt_btn_1"  data-toggle="modal" data-target="#xiti">+新建习题</button>
-                    <button class="btn btn-primary xsgl_btn_1">该课程学生管理</button>
+                    <button class="btn btn-primary xsgl_btn_1" data-toggle="modal" data-target="#student">该课程选修学生</button>
                     <button class="btn btn-primary sh_btn_1">提交审核</button>
                 </div>
 
+            </div>
+            <div class="xitiContent">
+                <h4>习题</h4>
+                <ol class="xitilist">
+
+                </ol>
             </div>
         </div>
     </div>
@@ -106,21 +151,22 @@
                     <h4 class="modal-title" id="myModalLabel">修改课程</h4>
                 </div>
                 <div class="modal-body">
-                    <input type="text"  class="form-control" required="required" placeholder="课程名称" value="前端开发">
+                    <input type="text"  class="form-control course_val c_name" required="required" placeholder="课程名称" >
                     <br>
-                    <input type="text"  class="form-control" required="required" placeholder="课程编号（唯一）" value="T_1024" disabled>
+                    <input type="text"  class="form-control course_val c_no" required="required" placeholder="课程编号（唯一）"  disabled>
                     <br>
-                    <input type="date"  class="form-control" required="required" placeholder="开课时间">
+                    <input type="text"  class="form-control course_val c_introduce" required="required" placeholder="课程介绍" >
                     <br>
-                    <input type="date" class="form-control" required="required" placeholder="结课时间">
+                    <input type="text"  class="form-control course_val c_classify" required="required" placeholder="课程类别" >
                     <br>
-                    <input type="text"  class="form-control" required="required" placeholder="课程类别" value="web开发">
+                    <input type="date"  class="form-control course_val c_start" required="required" placeholder="开课时间">
                     <br>
-                    <input type="text"  class="form-control" required="required" placeholder="课程介绍" value="这是一个介绍前端开发的实例视频，适合人群为所有水平的学生">
+                    <input type="date" class="form-control course_val c_end" required="required" placeholder="结课时间">
+                    <br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">提交修改</button>
+                    <button type="button" class="btn btn-primary sub_edit">提交修改</button>
                 </div>
             </div>
         </div>
@@ -133,25 +179,60 @@
                     <h4 class="modal-title" id="myModalLabel2">习题</h4>
                 </div>
                 <div class="modal-body">
-                    习题内容：<input type="text"  class="form-control" required="required" placeholder="习题内容">
+                    习题内容：<input type="text"  class="form-control xt_content" required="required" placeholder="习题内容">
                     <br>
-                    正确答案：<input type="text"  class="form-control" required="required" placeholder="正确答案">
+                    正确答案：<input type="text"  class="form-control xt_right" required="required" placeholder="正确答案">
                     <br>
-                    错误答案一：<input type="text"  class="form-control" required="required" placeholder="错误答案一">
+                    错误答案一：<input type="text"  class="form-control xt_opt1" required="required" placeholder="错误答案一">
                     <br>
-                    错误答案二：<input type="text" class="form-control" required="required" placeholder="错误答案二">
+                    错误答案二：<input type="text" class="form-control xt_opt2" required="required" placeholder="错误答案二">
                     <br>
-                    错误答案三：<input type="text"  class="form-control" required="required" placeholder="错误答案三">
+                    错误答案三：<input type="text"  class="form-control xt_opt3" required="required" placeholder="错误答案三">
                     <br>
-                    分值：<input type="number"  class="form-control" required="required">
+                    分值：<input type="number"  class="form-control xt_score" required="required">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">上传</button>
+                    <button type="button" class="btn btn-primary xiti_sub">上传</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="student" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel3">管理学生</h4>
+                </div>
+                <div class="modal-body">
+                   <div class="none">该课程还没有学生选修哦</div>
+                    <div class="normal">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>email</th>
+                                <th>习题得分</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     @@include('include/footer.html')
 </div>
 </body>
@@ -160,74 +241,351 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../static/js/sweetalert2.min.js"></script>
-
+<script src="../static/js/ajaxfileupload.js"></script>
 <script src="../static/js/index.js"></script>
 <script>
-   $('.del_course').click(function(){
-       swal({
-           title:'警告',
-           text:'确定要删除本课程吗？',
-           type:'warning',
-           showCancelButton:true,
+$(function(){
 
-       }).then(function(isConfirm){
-           if (isConfirm === true) {
-               swal(
-                       'Deleted!',
-                       'Your imaginary file has been deleted.',
-                       'success'
-               );
+    //初始化课程配置信息
+    $.ajax({
+        type:'get',
+        async:'false',
+        url:'http://localhost/studyApi/PhalApi/Public/?service=Course.getCoursesList&c_no='+getQueryString('c_no'),
+        success:function(data){
+            $('.content h3').html(data.data[0].c_name);
+            var course_Data=[];
+            course_Data.push(data.data[0].c_name);
+            course_Data.push(data.data[0].c_no);
+            course_Data.push(data.data[0].c_introduce);
+            course_Data.push(data.data[0].c_classify);
+            course_Data.push(data.data[0].c_start.split('.')[0]);
+            course_Data.push(data.data[0].c_end.split('.')[0]);
+            course_Data.push(data.data[0].c_exmine==0?'审核中':data.data[0].c_exmine==1?'未通过':'审核通过');
+            course_Data.push(data.data[0].c_img);
+            for(var i=0;i<course_Data.length;i++){
+                if(i == course_Data.length-1){
+                    $('.c_t').eq(i).find('img').attr('src',course_Data[i]);
+                    $('.c_t').eq(i).find('a').attr('href',course_Data[i]);
+                }else {
+                    $('.c_t').eq(i).html(course_Data[i]);
+                }
+                $('.course_val').eq(i).val(course_Data[i])
+            }
 
-           } else if (isConfirm === false) {
-               swal(
-                       'Cancelled',
-                       'Your imaginary file is safe :)',
-                       'error'
-               );
-
-           } else {
-               // Esc, close button or outside click
-               // isConfirm is undefined
-           }
-       })
-   });
-
-
-   $('.xl-toggle').click(function(){
-       if($(this).attr('class').indexOf('xl-toggle-rotate')!=-1){
-           $(this).removeClass('xl-toggle-rotate');
-           $(this).parent().siblings('.unit').hide();
-       }else {
-           $(this).addClass('xl-toggle-rotate');
-           $(this).parent().siblings('.unit').show();
-       }
-   });
-    $('.sj_btn_1').click(function(){
-
-        $('.sj_list').append($('.chapter').eq(0).clone(true))
-
+        },
+        error:function(err){
+            alert(err)
+        }
     });
 
-  $('.del-t').click(function(){
-      var _this=$(this).parent().parent();
-      swal({
-          title:'警告',
-          text:'删除将无法找回该课程？',
-          type:'warning',
-          showCancelButton:true,
+    //初始化课程章节列表
+    $.ajax({
+        type:'get',
+        async:'false',
+        url:'http://localhost/studyApi/PhalApi/Public/?service=Course.getCourseChapter',
+        data:{'course_id':getQueryString('c_no')},
+        success:function(data){
+//            console.log(data.data)
+            if(data.data.length==0){
 
-      }).then(function(isConfirm){
-          if (isConfirm === true) {
-              _this.remove();
-              swal(
-                      'Deleted!',
-                      'Your imaginary file has been deleted.',
-                      'success'
-              );
+            }else {
+                $('.none-sj-list').hide();
+//                $('.done-sj-list')
+                for(var i=0;i<data.data.length;i++){
+                    var li=$('<li class="chapter"> <h4 class="pull-left"> <span class="glyphicon glyphicon-triangle-right xl-toggle " aria-hidden="true"></span> <span class="chapter_name"><input type="text" value="'+data.data[i].c_content+'" style="border: none"></span> </h4> <div class="del_chapter pull-right"><span class="glyphicon glyphicon-trash del-t"></span></div> <ul class="unit" > <li class="unit-list"> <h4 class="pull-left"> <span class="chapter_name">单元</span> </h4> <div class="unit_introduce" style="margin-top: 60px">单元介绍：<input type="text" placeholder="单元介绍" value="'+data.data[i].capter_introduce+'"> </div> <div class="file_upload"> <div style=""> <form class="uploadForm" enctype="multipart/form-data"> <input type="file" name="file"  class="file1" required="required"> </form> <button class="btn-primary btn video_upload">课件上传</button> </div> <video src="'+data.data[i].c_url+'" controls></video></div> </li> </ul> </li>')
+                    $('.done-sj-list').append(li);
 
-          }
-      })
-  });
+                }
+            }
+
+        },
+        error:function(err){
+            alert(err)
+        }
+    });
+
+
+//初始化习题
+    $.ajax({
+        type:'get',
+        async:'false',
+        url:'http://localhost/studyApi/PhalApi/Public/?service=Exercise.getExercise',
+        data:{'c_id':getQueryString('c_no')},
+        success:function(data){
+            for(var i=0;i<data.data.length;i++){
+                var liDiv=$('<li>题目:'+data.data[i].content+'&nbsp;正确答案:'+data.data[i].right_option+'&nbsp;错误选项一:'+data.data[i].option_1+'&nbsp;错误选项二:'+data.data[i].option_2+'&nbsp;错误选项三:'+data.data[i].option_3+'&nbsp;分值:'+data.data[i].score+'&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">删除</a><span>'+data.data[i].id+'</span></li>');
+                $('.xitilist').append(liDiv);
+
+            }
+            $('.xitilist a').click(function(){
+                var id_span=$(this).siblings('span').html();
+                $.ajax({
+                    url:'http://localhost/studyApi/PhalApi/Public/?service=Exercise.delExercise&id='+id_span,
+                    type:'get',
+                    success:function(){
+                        window.location.reload();
+                    }
+
+                });
+            });
+        },
+        error:function(err){
+            alert(err)
+        }
+    });
+
+//初始化课程编辑信息
+    var isFill=true;
+    $.ajax({
+        type:'get',
+        async:'false',
+        url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByCourse',
+        data:{'c_id':getQueryString('c_no')},
+        success:function(data){
+            if(data.data.length==0){
+                $('.normal').hide();
+                isFill=false;
+            }else {
+                isFill=true;
+                $('.none').hide();
+                for(var i=0;i<data.data.length;i++){
+                    var tr=$('<tr><td>'+data.data[i].name+'</td><td>'+data.data[i].sex+'</td><td>'+data.data[i].email+'</td><td>'+data.data[i].xiti_score+'</td></tr>');
+                    $('.normal tbody').append(tr);
+                }
+            }
+        },
+        error:function(err){
+            alert(err)
+        }
+    });
+    $('.del_course').click(function(){
+        swal({
+            title:'警告',
+            text:'确定要删除本课程吗？',
+            type:'warning',
+            showCancelButton:true,
+
+        }).then(function(isConfirm){
+            if (isConfirm === true) {
+                $.ajax({
+                    type:'get',
+                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.removeCourse',
+                    data:{"course_id":getQueryString('c_no')},
+                    success:function(data){
+                        swal(
+                                'Deleted!',
+                                'Your imaginary file has been deleted.',
+                                'success'
+                        ).then(function(isConfirm){
+                            if(isConfirm===true){
+                                window.location.href='http://localhost/studyFront/dist/teacher.html';
+                            }
+                        });
+                    },
+                    error:function(err){alert(err)}
+                });
+
+
+            } else if (isConfirm === false) {
+                swal(
+                        'Cancelled',
+                        'Your imaginary file is safe :)',
+                        'error'
+                );
+
+            } else {
+                // Esc, close button or outside click
+                // isConfirm is undefined
+            }
+        })
+    });
+
+    $('.sub_edit').click(function(){
+        $.ajax({
+            type:'get',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.updateCourse',
+            data:{"course_id":getQueryString('c_no'),"c_name":$('.c_name').val(),"c_no":$('.c_no').val(),
+                "c_introduce":$('.c_introduce').val(),"c_classify":$('.c_classify').val(),"c_start":$('.c_start').val(),"c_end":$('.c_end').val()},
+            success:function(data){
+                console.log(data)
+            },
+            error:function(err){alert(err)}
+        });
+    });
+
+
+
+
+
+   setTimeout(function(){
+       $('.xl-toggle').click(function(){
+           if($(this).attr('class').indexOf('xl-toggle-rotate')!=-1){
+               $(this).removeClass('xl-toggle-rotate');
+               $(this).parent().siblings('.unit').hide();
+           }else {
+               $(this).addClass('xl-toggle-rotate');
+               $(this).parent().siblings('.unit').show();
+           }
+       });
+       $('.sj_btn_1').click(function(){
+           if(isFill){
+               $('.done-sj-list').append($('.done-sj-list .chapter').eq(0).clone(true))
+           }else {
+               $('.none-sj-list').append($('.none-sj-list .chapter').eq(0).clone(true))
+           }
+
+
+       });
+   },500)
+
+
+    setTimeout(function(){
+        $('.del-t').click(function(){
+            var _this=$(this).parent().parent();
+            swal({
+                title:'警告',
+                text:'删除将无法找回该课程？',
+                type:'warning',
+                showCancelButton:true,
+
+            }).then(function(isConfirm){
+                if (isConfirm === true) {
+                    _this.remove();
+                    $.ajax({
+                        url
+                    });
+                    swal(
+                            'Deleted!',
+                            'Your imaginary file has been deleted.',
+                            'success'
+                    );
+
+                }
+            })
+        });
+    },500)
+
+
+
+    //上传视频
+   setTimeout(function(){
+       $(".video_upload").click(function(){
+           var _self=$(this);
+           //判断是否有选择上传文件
+           var videoPath = $(this).siblings('form').find('.file1').val();
+           if (videoPath == "") {
+               alert("请选择上传视频！");
+               return;
+           }
+           //判断上传文件的后缀名
+           var strExtension = videoPath.substr(videoPath.lastIndexOf('.') + 1);
+           if (strExtension != 'mp4' && strExtension != 'ogg'
+                   && strExtension != 'flv' && strExtension != 'avi' && strExtension != 'rmvb' && strExtension != '3gp' ) {
+               swal({
+                   title:'错误',
+                   text:'请选择视频格式文件',
+                   type:'error',
+                   showCancelButton:true
+               });
+               return;
+           }
+
+           var formData=new FormData($(this).siblings('form')[0]);
+           $.ajax(
+                   {
+                       type:'POST',
+                       url:'http://localhost/studyApi/PhalApi/Public/?service=Course.uploadVideo',
+                       data:formData,
+                       dataType:'json',
+                       async: false,
+                       cache: false,
+                       contentType: false,
+                       processData: false,
+                       before:function(){
+                           $('.video_upload').html('上传中');
+                       },
+                       success:function (data){
+//                            console.log(data)
+                           if(_self.parent().siblings('video')){
+                               _self.parent().siblings('video').remove();
+                           }
+                           var video=$('<video src='+data.data+' controls="controls"></video>');
+                           _self.parent().parent().append(video);
+                       },
+                       error:function (){alert('error')}
+                   }
+           );
+       });
+   },500)
+
+
+    //上传习题
+    $('.xiti_sub').click(function(){
+        $.ajax({
+            type:'get',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Exercise.addExercise',
+            data:{"c_id":getQueryString('c_no'),"content":$('.xt_content').val(),"right_opt":$('.xt_right').val(),
+                "opt1":$('.xt_opt1').val(),"opt2":$('.xt_opt2').val(),"opt3":$('.xt_opt3').val(),'score':$('.xt_score').val()
+            },
+            success:function(){
+                swal({
+                    title:'成功',
+                    text:'习题上传成功',
+                    type:'success',
+                    showCancelButton:true
+                }).then(function(isconfirm){
+                    if(isconfirm==true){
+                        window.location.reload();
+                    }
+                });
+            },
+            error:function(err){alert(err)}
+        });
+    });
+
+    //提交审核
+    $('.sh_btn_1').click(function(){
+        $('.sj_list .chapter').each(function(x){
+            var data={
+                "c_id":getQueryString('c_no'),
+                "capter_id":getQueryString('c_no')+'_'+Number(Number(x)+Number(1)),
+                "c_content":$(this).find('.chapter_name input').val(),
+                "capter_introduce":$(this).find('.unit_introduce input').val(),
+                "c_url":$(this).find('.file_upload video').attr('src')
+            };
+            $.ajax({
+                type:'post',
+                url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourseChapter',
+                data:data,
+                success:function(){
+                    swal({
+                        title:'成功',
+                        text:'上传成功，等待管理员审核',
+                        type:'success',
+                        showCancelButton:true
+                    }).then(function(isconfirm){
+                        if(isconfirm==true){
+                            window.location.reload();
+                        }
+                    });
+                },
+                error:function(err){alert(err)}
+            });
+        });
+    });
+})
+
+
+
+
+
+
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
 
 </script>
 </html>

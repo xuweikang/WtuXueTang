@@ -72,3 +72,13 @@
 }
 .del-t{cursor: pointer}
 .file_upload{margin-top: 52px}
+.file_upload video{
+    margin-top: 52px;
+}
+.video_upload{
+    position: absolute;
+    top: 146px;
+    left: 300px;
+}
+.xitilist li{margin: 9px}
+.xitilist span{display: none}

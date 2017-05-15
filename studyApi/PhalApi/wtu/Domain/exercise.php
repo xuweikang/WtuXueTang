@@ -40,4 +40,9 @@ class Domain_Exercise
         $model = new Model_Exercise();
         return $model->updateExercise($id, $c_id, $content, $right_option, $option_1, $option_2, $option_3, $score);
     }
+    //上传练习题
+    public function addExercise($c_id,$content,$right_opt,$opt1,$opt2,$opt3,$score){
+        $model=new Model_Exercise();
+        return $model->addExercise($c_id,$content,$right_opt,$opt1,$opt2,$opt3,$score);
+    }
 }

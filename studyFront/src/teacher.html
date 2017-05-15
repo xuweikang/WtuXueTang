@@ -13,6 +13,7 @@
     <link href="../static/css/footer.css" rel="stylesheet">
     <link href="../static/css/typography.css" rel="stylesheet">
     <link href="../static/css/teacher.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/sweetalert2.min.css">
     <!-- Bootstrap -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -44,19 +45,21 @@
                             <h4 class="modal-title" id="myModalLabel">新建课程</h4>
                         </div>
                         <div class="modal-body">
-                            <input type="text"  class="form-control" required="required" placeholder="课程名称">
+                            <input type="text" class="form-control c_name" required="required" placeholder="课程名称">
                             <br>
-                            <input type="text"  class="form-control" required="required" placeholder="课程编号（唯一）">
+                            <input type="text"  class="form-control c_no" required="required" placeholder="课程编号（唯一）">
                             <br>
-                            <input type="date"  class="form-control" required="required" placeholder="开课时间">
+                            <input type="date"  class="form-control c_start" required="required" placeholder="开课时间">
                             <br>
-                            <input type="date" class="form-control" required="required" placeholder="结课时间">
+                            <input type="date" class="form-control c_end" required="required" placeholder="结课时间">
                             <br>
-                            <input type="text"  class="form-control" required="required" placeholder="课程类别">
+                            <input type="text"  class="form-control c_classify" required="required" placeholder="课程类别">
                             <br>
-                            <input type="text"  class="form-control" required="required" placeholder="课程介绍">
+                            <input type="text"  class="form-control c_introduce" required="required" placeholder="课程介绍">
                             <br>
-                            <input type="file" name="file" class="form-control course_img" id="file1" required="required" placeholder="课程封面">
+                            <form id="uploadForm">
+                                <input type="file" name="file" class="form-control course_img" id="file1" required="required" placeholder="课程封面">
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -71,50 +74,7 @@
         <div class="container">
             <h3>我的课程</h3>
             <ul class="tt">
-                <li>
-                    <a href="">
-                        <h4>测试课程</h4>
-                        <div class="msg">
-                            <span class="course_author">xwk</span>
-                            <span class="course_cat">web</span>
-                            <span class="course_no">T_110</span>
-                        </div>
-                    </a>
-                    <div class="check"><a href="">在线查看</a></div>
-                </li>
-                <li>
-                    <a href="">
-                        <h4>测试课程</h4>
-                        <div class="msg">
-                            <span class="course_author">xwk</span>
-                            <span class="course_cat">web</span>
-                            <span class="course_no">T_110</span>
-                        </div>
-                    </a>
-                    <div class="check"><a href="">在线查看</a></div>
-                </li>
-                <li>
-                    <a href="">
-                        <h4>测试课程</h4>
-                        <div class="msg">
-                            <span class="course_author">xwk</span>
-                            <span class="course_cat">web</span>
-                            <span class="course_no">T_110</span>
-                        </div>
-                    </a>
-                    <div class="check"><a href="">在线查看</a></div>
-                </li>
-                <li>
-                    <a href="">
-                        <h4>测试课程</h4>
-                        <div class="msg">
-                            <span class="course_author">xwk</span>
-                            <span class="course_cat">web</span>
-                            <span class="course_no">T_110</span>
-                        </div>
-                    </a>
-                    <div class="check"><a href="">在线查看</a></div>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -134,34 +94,107 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../static/js/ajaxfileupload.js"></script>
+<script src="../static/js/sweetalert2.min.js"></script>
 <script src="../static/js/index.js"></script>
 <script>
 
   $(function(){
-      $('.tt>li').hover(function(){
-          $(this).find('.check').show();
-      },function(){
-          $(this).find('.check').hide();
+
+
+
+      //课程列表
+      $.ajax({
+          type:'get',
+          url:'http://localhost/studyApi/PhalApi/Public/?service=Course.getCourseListTeacher',
+          data:{"name":JSON.parse(sessionStorage.getItem('user')).name},
+          success:function(data){
+              for(let i=0;i<data.data.length;i++){
+                var couse_list=$('<li> <a href="javascript:void(0)" class="course_detail"> <h4>'+data.data[i].c_name+'</h4> <div class="msg"> <span class="course_author">'+data.data[i].c_creator+'</span> <span class="course_cat">'+data.data[i].c_classify+'</span> <span class="course_no">'+data.data[i].c_no+'</span> </div> </a> <div class="check"><a href="javascript:void(0)" class="course_detail_1">在线查看</a></div> </li>');
+                  $('.tt').append(couse_list);
+              }
+              $('.course_detail').each(function(x){
+                  $(this).click(function(){
+                      window.location.href='http://localhost/studyFront/dist/course_detail_teacher.html?c_no='+$(this).find('.course_no').html();
+                  });
+              });
+              $('.course_detail_1').each(function(x){
+                  $(this).click(function(){
+                      window.location.href='http://localhost/studyFront/dist/course_detail_teacher.html?c_no='+$(this).parent().siblings('.course_detail').find('.course_no').html();
+                  });
+              });
+              $('.tt>li').hover(function(){
+                  $(this).find('.check').show();
+              },function(){
+                  $(this).find('.check').hide();
+              });
+          },
+          error:function(){}
       });
 
 
-      $('.new_course').click(function(){
-          $.ajaxFileUpload
-          (
-                  {
-                      url: 'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourse', //用于文件上传的服务器端请求地址
-                      secureuri: false, //是否需要安全协议，一般设置为false
-                      fileElementId: 'file1', //文件上传域的ID
-                      dataType: 'json', //返回值类型 一般设置为json
-                      data:{"c_name":"","c_no":"","c_start":"","c_end":"","c_classify":"","c_introduce":"","c_img":""},
-                      success: function (data, status)  //服务器成功响应处理函数
-                      {
 
+      $('.new_course').click(function(){
+          //判断课程编号是否存在
+          var flag=true;
+          $.ajax(
+                  {
+                      type:'POST',
+                      async: false,
+                      url:'http://localhost/studyApi/PhalApi/Public/?service=Course.getCoursesList',
+                      data:{'c_no':$('.c_no').val()},
+                      success:function (data){
+//                          console.log(data.data.length)
+                          if(data.data.length!=0){
+                              swal({
+                                  title:'错误',
+                                  text:'该课程编号已经存在，请重新选择',
+                                  type:'error',
+                                  showCancelButton:true
+                              });
+                              flag=false;
+                          }
                       },
-                      error: function (data, status, e)//服务器响应失败处理函数
+                      error:function (){alert('error')}
+                  }
+          );
+
+          //判断是否有选择上传文件
+          var imgPath = $("#file1").val();
+          if (imgPath == "") {
+              alert("请选择上传图片！");
+              return;
+          }
+          //判断上传文件的后缀名
+          var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+          if (strExtension != 'jpg' && strExtension != 'gif'
+                  && strExtension != 'png' && strExtension != 'bmp') {
+              swal({
+                  title:'错误',
+                  text:'请选择图片格式文件',
+                  type:'error',
+                  showCancelButton:true,
+              });
+              return;
+          }
+
+          var formData=new FormData($( "#uploadForm" )[0]);
+          if(flag){
+              $.ajax(
                       {
-                          alert(e);
+                          type:'POST',
+                          url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourse&name='+JSON.parse(sessionStorage.getItem('user')).name+'&c_name='+$('.c_name').val()+'&c_no='+$('.c_no').val()+'&c_start='+$('.c_start').val()+'&c_end='+$('.c_end').val()+'&c_classify='+$('.c_classify').val()+'&c_introduce='+$('.c_introduce').val()+'&c_exmine=0',
+                          data:formData,
+                          async: false,
+                          cache: false,
+                          contentType: false,
+                          processData: false,
+                          success:function (data){
+                              window.location.reload();
+                          },
+                          error:function (){alert('error')}
                       }
+              );
+          }
       });
   })
 

@@ -17,7 +17,7 @@
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="../static/css/sweetalert2.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,7 +37,7 @@
                         <a class="toggleButton ">
                             <span class="sh"></span>
                         </a>
-                        <a class="navbar-brand" href="http://localhost:63342/studyFront/dist/index.html" style="color: white">Home</a>
+                        <a class="navbar-brand" href="http://localhost/studyFront/dist/index.html" style="color: white">Home</a>
                         <div class="clearfix"></div>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,8 +51,8 @@
                                 <button class="btn"><span class="glyphicon glyphicon-search"></span><br/>Search</a>
                                 </button>
                             </li>
-                            <li><a href="http://localhost:63342/studyFront/dist/login.html">登录</a></li>
-                            <li><a href="http://localhost:63342/studyFront/dist/login.html">注册</a></li>
+                            <li><a href="http://localhost/studyFront/dist/login.html">登录</a></li>
+                            <li><a href="http://localhost/studyFront/dist/login.html">注册</a></li>
                         </ul>
                         <div class="basic_sign">
                              <span class="userinfo">
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="left">
-                    <div class="logo"><a href="http://localhost:63342/studyFront/dist/index.html"><img src="../static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
+                    <div class="logo"><a href="http://localhost/studyFront/dist/index.html"><img src="../static/image/logo.jpg" alt=""><span>武汉纺织大学在线教学平台</span></a></div>
                     <nav class="nav">
                         <ul>
                             <li><a href="">课程</a></li>
@@ -98,7 +98,7 @@
     <div class="course_about">
         <div class="container">
             <div class="row course_info">
-                <h2>计算机程序设计基础(T_10255)</h2>
+                <h2 class="course-title">计算机程序设计基础(T_10255)</h2>
                 <small style="float:left;" class="from">来自:<span class="author">徐伟康</span>老师 &nbsp;&nbsp;&nbsp;&nbsp;|
                     &nbsp;&nbsp;&nbsp;&nbsp;分类:<span class="cat">计算机基础</span></small>
                 <br><br><br>
@@ -124,7 +124,7 @@
                                     class="jssj">2017-02-21</span></small>
                         </li>
                     </ul>
-                    <button class="btn btn-primary col-sm-12 col-xs-12">我要选课</button>
+                    <button class="btn btn-primary col-sm-12 col-xs-12 join_course">我要选课</button>
                 </div>
             </div>
             <div class="row course_introduce">
@@ -144,12 +144,7 @@
                     <h3>课程章节</h3>
                     <div class="content">
                         <ul>
-                            <li>第1章 绪论</li>
-                            <li>第2章 C++简单程序设计（一）</li>
-                            <li>第3章  C++简单程序设计（二）</li>
-                            <li>第4章 函数</li>
-                            <li>第5章 类与对象</li>
-                            <li>第6章 异常处理</li>
+
                         </ul>
                     </div>
                 </div>
@@ -174,8 +169,90 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/sweetalert2.min.js"></script>
 <script src="../static/js/index.js"></script>
 <script>
+    $(function(){
+        //获取课程配置信息
+        $.ajax({
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByPMId',
+            type:'get',
+            data:{'c_id':getQueryString('c_no')},
+            success:function(data){
+                $('.course-title').html(data.data[0].c_name);
+                $('.author').html(data.data[0].c_creator);
+                $('.cat').html(data.data[0].c_classify);
+                $('.video_img img').attr('src',data.data[0].c_img);
+                $('.info1 .xkrs').html(data.data[0].num);
+                $('.info1 .kksj').html((data.data[0].c_start).split(' ')[0]);
+                $('.kcno').html(data.data[0].c_no);
+                $('.jssj').html(data.data[0].c_end.split(' ')[0]);
+                $('.course_introduce .content').html(data.data[0].c_introduce);
+                $('.course_introduce h4 span').html(data.data[0].c_creator);
+                //获得当前时间戳
+                var now=Date.parse(new Date());
+                if(now>Date.parse(new Date((data.data[0].c_end).split(' ')[0]))){
+                    $('.join_course').html('该课程已经结束').attr('disabled','disabled');
 
+                }else if(now<Date.parse(new Date((data.data[0].c_start).split(' ')[0]))){
+                    $('.join_course').html('该课程尚未开始').attr('disabled','disabled');
+                }else {
+                    $('.join_course').html('我要选课');
+                }
+            },
+            error:function(err){
+                alert(err)
+            }
+        });
+
+        //获取课程列表信息
+        $.ajax({
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.getCourseChapter',
+            type:'get',
+            data:{'course_id':getQueryString('c_no')},
+            success:function(data){
+//               console.log(data.data)
+                for(var i=0;i<data.data.length;i++){
+                    var li=$('<li>'+data.data[i].c_content+'</li>');
+                    $('.course_capter ul').append(li)
+                }
+
+            },
+            error:function(err){
+                alert(err)
+            }
+        });
+    })
+
+    var user = sessionStorage.getItem('user');
+    user = JSON.parse(user);
+    $('.join_course').click(function(){
+        swal({
+            title:'success',
+            text:'选课成功',
+            type:'success',
+            showCancelButton:true,
+        }).then(function(isconfirm){
+            if(isconfirm==true){
+                $.ajax({
+                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addStudentCourse',
+                    data:{"name":user.name,"course":getQueryString('c_no'),"score":0,"isFill":0},
+                    type:'get',
+                    success:function(){
+                        window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
+                    },
+                    error: function (err) {
+                        alert(err)
+                    }
+                })
+            }
+        });
+    });
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
 </script>
 </html>

@@ -8,21 +8,47 @@
 class Model_Course extends PhalApi_Model_NotORM{
 
     //上传课程
-    public function addCourse($c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_img){
+    public function addCourse($name,$c_name,$c_no,$c_start,$c_end,$c_classify,$c_introduce,$c_exmine,$c_img){
+
+
         $data = array(
+            'c_creator'=>$name,
             'c_name'=>$c_name,
             'c_no'=>$c_no,
             'c_start'=>$c_start,
             'c_end'=>$c_end,
             'c_classify'=>$c_classify,
             'c_introduce'=>$c_introduce,
+            'c_exmine'=>$c_exmine,
             'c_img'=>$c_img
 
         );
+
+
         $rs = DI()->notorm->course_configure
             ->insert($data);
         return $rs;
     }
+    //上传课程详细章节
+    public function addCourseChapter($c_id,$capter_id,$c_content,$capter_introduce,$c_url){
+
+        $rs2 =DI()->notorm->course_capter
+            ->where('c_id= ?',$c_id)
+            ->delete();
+
+        $data = array(
+            'c_id'=>$c_id,
+            'capter_id'=>$capter_id,
+            'c_content'=>$c_content,
+            'capter_introduce'=>$capter_introduce,
+            'c_url'=>$c_url
+
+        );
+        $rs = DI()->notorm->course_capter
+            ->insert($data);
+        return $rs;
+    }
+
 
     //获得所有课程列表
     public function getCoursesList($course_id)
@@ -37,6 +63,33 @@ class Model_Course extends PhalApi_Model_NotORM{
                 ->select('*')
                 ->fetchRows();
         }
+    }
+    //首页获取课程列表
+
+
+    //教师查看个人课程列表
+    public function getCourseListTeacher($name){
+        return DI()->notorm->course_configure
+            ->select('*')
+            ->where('c_creator= ?' ,$name)
+            ->fetchRows();
+    }
+
+    //修改课程(根据课程id)
+    public function updateCourse($course_id,$c_name,$c_no,$c_introduce,$c_classify,$c_start,$c_end){
+        $data = array(
+            'c_name' => $c_name,
+            'c_no' => $c_no,
+            'c_introduce' => $c_introduce,
+            'c_classify'=>$c_classify,
+            'c_start' => $c_start,
+            'c_end' => $c_end
+
+        );
+        $rs =DI()->notorm->course_configure
+            ->where('c_no = ?',$course_id)
+            ->update($data);
+        return $rs;
     }
 
 
@@ -54,16 +107,42 @@ class Model_Course extends PhalApi_Model_NotORM{
         if($rs1==false || $rs2==false || $rs3==false){
             return 'delete error';
         }
-
+    }
+    //删除课程章节
+    public function removeCourseCapter($course_id){
+        $rs1 =DI()->notorm->course_configure
+            ->where('c_no= ?',$course_id)
+            ->delete();
+        $rs2 =DI()->notorm->course_capter
+            ->where('c_id= ?',$course_id)
+            ->delete();
+        $rs3 =DI()->notorm->course_unit
+            ->where('c_id= ?',$course_id)
+            ->delete();
+        if($rs1==false || $rs2==false || $rs3==false){
+            return 'delete error';
+        }
     }
 
     //查看课程详细
     public function selectCourseDetail($course_id){
-        $sql="select  kc.*  ,sp.* from course_configure kc  , course_capter sp where kc.c_no=sp.c_id AND kc.c_no='{$course_id}'";
+        $sql="select  kc.*  ,sp.* from course_configure kc  , course_capter sp where kc.c_no=sp.c_id AND kc.c_no='{$course_id}' ORDER BY capter_id";
 
         $rs=$this->getORM()->queryAll($sql,array());
 
         return $rs;
+    }
+    //只查看课程章节表信息
+    public function getCourseChapter($course_id){
+//            $rs=DI()->notorm->course_capter
+//                ->select('*')
+//                ->where('c_id= ? ',$course_id)
+//                ->fetchRows();
+        $sql="select * from course_capter  where c_id = '{$course_id}' ORDER BY capter_id;";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+        return $rs;
+
     }
 
     //管理员查看审核课程内容
@@ -126,6 +205,9 @@ class Model_Course extends PhalApi_Model_NotORM{
         }
     }
 
+    //查询课程信息
+
+
 
     //获取选课学生最多的前4课程
 
@@ -158,6 +240,30 @@ LIMIT 0,
         return $rs;
     }
 
+    public function selectCourseByPMId($c_id){
+        $sql="select * from (
+
+SELECT
+	*
+FROM
+	course_configure where c_exmine=2 AND c_no='{$c_id}' )table1
+INNER JOIN (
+	SELECT
+		count(*) AS num,
+		course
+	FROM
+		student_course
+	GROUP BY
+		course
+) table2 ON table1.c_no = table2.course
+"
+;
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
+
 
 
     //按课程分类查询
@@ -166,6 +272,52 @@ LIMIT 0,
 
         $rs=$this->getORM()->queryAll($sql,array());
 
+        return $rs;
+    }
+
+    //学生选课
+    public function addStudentCourse($name,$course,$score,$isfill){
+        $data = array(
+            'name'=>$name,
+            'course'=>$course,
+            'xiti_score'=>$score,
+            'isFill'=>$isfill
+        );
+        $rs = DI()->notorm->student_course
+            ->insert($data);
+        return $rs;
+    }
+
+    //获得选课学生信息
+    public function selectCourseByCourse($c_id){
+        $sql="select * from user_identity a INNER JOIN (select * from student_course where course = '{$c_id}') b on a.name = b.name";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
+
+    //修改练习题分数
+    public function markScore($name,$course,$score,$isFill){
+
+        $data=array(
+            'xiti_score'=>$score,
+            'isFill'=>$isFill
+        );
+        $rs =DI()->notorm->student_course
+            ->where('name = ?',$name)
+            ->where('course = ?',$course)
+            ->update($data);
+        return $rs;
+    }
+    //
+    public function selScore($name,$course){
+
+        $rs=DI()->notorm->student_course
+            ->select('*')
+            ->where('name = ?',$name)
+            ->where('course = ?',$course)
+            ->fetchRows();
         return $rs;
     }
 }

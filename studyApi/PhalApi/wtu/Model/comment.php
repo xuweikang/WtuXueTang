@@ -9,12 +9,12 @@
 class Model_Comment extends PhalApi_Model_NotORM{
 
     //递归获取评论列表
-    public function getCommentList($comment_id,$parent_id = 0,&$result = array()){
+    public function getCommentList($course_id,$parent_id = 0,&$result = array()){
 
             $arr=DI()->notorm->course_comment
                    ->select('*')
                    ->where('parent_id= ? ',$parent_id)
-                   ->where('comment_id=?',$comment_id)
+                   ->where('course_id=?',$course_id)
                    ->order("create_time desc")
                    ->fetchRows();
             if(empty($arr)){
@@ -22,7 +22,7 @@ class Model_Comment extends PhalApi_Model_NotORM{
             }
             foreach ($arr as $cm) {
                 $thisArr=&$result[];
-                $cm["children"] = $this->getCommentList($comment_id,$cm["id"],$thisArr);
+                $cm["children"] = $this->getCommentList($course_id,$cm["id"],$thisArr);
                 $thisArr = $cm;
             }
             return $result;
@@ -73,5 +73,30 @@ class Model_Comment extends PhalApi_Model_NotORM{
                 ->where('comment_id= ?',$idArr[$index])
                 ->delete();
         }
+    }
+
+
+    //获取讨论区内容
+    public function getCommentTitle($c_id){
+
+        return DI()->notorm->comment_title
+            ->select('*')
+            ->where("c_id = ?",$c_id)
+            ->fetchRows();
+    }
+
+    //新建顶层讨论
+    public function addCommentHead($course_id,$parent_id,$nickname,$create_time,$content){
+
+        $data = array(
+            'course_id'=>$course_id,
+            'parent_id'=>$parent_id,
+            'nickname'=>$nickname,
+            'create_time'=>$create_time,
+            'content'=>$content
+        );
+        $rs = DI()->notorm->course_comment
+            ->insert($data);
+        return $rs;
     }
 }

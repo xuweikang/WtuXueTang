@@ -17,7 +17,7 @@
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="../static/css/sweetalert2.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,8 +33,8 @@
     <div class="video_detail">
         <div class="container">
             <div class="row">
-                <h3>C++简单程序设计（一）</h3>
-                <video src="http://localhost/vueAdmin/static/video/ogg-19M.ogg" controls="controls"></video>
+                <h3 class="course_title">C++简单程序设计（一）</h3>
+                <video class="video-s" src="http://localhost/vueAdmin/static/video/ogg-19M.ogg" controls="controls"></video>
             </div>
             <div class="row">
                 <div class="video-after">
@@ -47,110 +47,19 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="course_list">
-                            <ul>
-                                <li class="active"><span class="badge">1</span><a href="">绪论</a><p>这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍</p></li>
-                                <li><span class="badge">2</span><a href="">绪论2</a><p>这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍</p></li>
-                                <li><span class="badge">3</span><a href="">绪论3</a><p>这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍这是绪论的介绍</p></li>
-                            </ul>
+                            <ul></ul>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="comment">
-                            <button class="btn btn-primary">发布问题</button>
-                            <ul>
-                                <li>
-                                    <div class="tx"><img src="http://localhost/studyApi/PhalApi/upload/wtu/2017/04/11/1491899687.jpg" alt=""></div>
-                                    <div class="lesson-info">
-                                        <h3><a href="">前端框架怎么学</a></h3>
-                                        <div class="timeandicon">
-                                            <div class="time"><span class="author">xwk123</span>最后回答:<span class="lastTime">2017-03-29 11:09:51</span></div>
-                                            <div class="question">
-                                                <p></p>
-                                                <p>新建一个项目无法运行，每次都报错Error:Failed to find: com.android.support:appcompat-v7:22.+asdasdasdadwda111111</p>
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lesson-number">
-                                        <span>1</span>
-                                        <p>讨论中</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tx"><img src="http://localhost/studyApi/PhalApi/upload/wtu/2017/04/11/1491899687.jpg" alt=""></div>
-                                    <div class="lesson-info">
-                                        <h3><a href="">前端框架怎么学</a></h3>
-                                        <div class="timeandicon">
-                                            <div class="time"><span class="author">xwk123</span>最后回答:<span class="lastTime">2017-03-29 11:09:51</span></div>
-                                            <div class="question">
-                                                <p></p>
-                                                <p>新建一个项目无法运行，每次都报错Error:Failed to find: com.android.support:appcompat-v7:22.+</p>
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lesson-number">
-                                        <span>1</span>
-                                        <p>讨论中</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tx"><img src="http://localhost/studyApi/PhalApi/upload/wtu/2017/04/11/1491899687.jpg" alt=""></div>
-                                    <div class="lesson-info">
-                                        <h3><a href="">前端框架怎么学</a></h3>
-                                        <div class="timeandicon">
-                                            <div class="time"><span class="author">xwk123</span>最后回答:<span class="lastTime">2017-03-29 11:09:51</span></div>
-                                            <div class="question">
-                                                <p></p>
-                                                <p>新建一个项目无法运行，每次都报错Error:Failed to find: com.android.support:appcompat-v7:22.+</p>
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lesson-number">
-                                        <span>1</span>
-                                        <p>讨论中</p>
-                                    </div>
-                                </li>
+                            <button class="btn btn-primary sub_question" data-toggle="modal" data-target="#fb">发布问题</button>
+                            <ul class="comment_zl">
+
                             </ul>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="homework">
                             <ol>
-                                <li>
-                                    <span class="ti_title">兔子和乌龟比什么绝对不会输？</span><span class="a_score">30</span><span class="answer-sel"></span>
-                                    <ul>
-                                        <li><span class="sel">A</span>. <span class="answer">仰卧起坐</span></li>
-                                        <li><span class="sel">B</span>. <span class="answer">跳远</span></li>
-                                        <li><span class="sel">C</span>. <span class="answer">跳高</span></li>
-                                        <li><span class="sel">D</span>. <span class="answer">赛跑</span></li>
-                                    </ul>
 
-                                </li>
-                                <li>
-                                    <span class="ti_title">小明妈妈：“小明赶紧切土豆去！”小明：“切，我不切！提问：小明要不要去切土豆？？</span>
-                                    <span class="a_score">30</span>'
-                                    <span class="answer-sel"></span>
-                                <ul>
-                                    <li><span class="sel">A</span>. <span class="answer">切</span></li>
-                                    <li><span class="sel">B</span>. <span class="answer">不切</span></li>
-                                    <li><span class="sel">C</span>. <span class="answer">在犹豫</span></li>
-                                    <li><span class="sel">D</span>. <span class="answer">不知道</span></li>
-                                </ul>
-
-                                </li>
-                                <li>
-                                    <span class="ti_title">1+1等于几?</span>
-                                    <span class="a_score">40</span>'
-                                    <span class="answer-sel"></span>
-
-                                    <ul>
-                                        <li><span class="sel">A</span>. <span class="answer">1</span></li>
-                                        <li><span class="sel">B</span>. <span class="answer">2</span></li>
-                                        <li><span class="sel">C</span>. <span class="answer">3</span></li>
-                                        <li><span class="sel">D</span>. <span class="answer">4</span></li>
-                                    </ul>
-
-                                </li>
                             </ol>
-                            <button class="btn btn-primary col-sm-3 col-xs-12">提交作业</button>
+                            <button class="btn btn-primary col-sm-3 col-xs-12 sub_work">提交作业</button>
                         </div>
                     </div>
                 </div>
@@ -159,6 +68,25 @@
     </div>
 
 
+    <div class="modal fade" id="fb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">发布问题</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text"  class="form-control q_content" required="required" placeholder="问题描述" >
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary sub_fb">确认发布</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @@include('include/footer.html')
 </div>
 </body>
@@ -166,12 +94,237 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/sweetalert2.min.js"></script>
 <script src="../static/js/index.js"></script>
 <script>
-$('#homework ul li').click(function(){
-    $(this).css('color','red').siblings().css('color','#333');
-    $(this).parent().siblings('.answer-sel').html($(this).find('.sel').html());
-})
 
+    $(function(){
+        var user = sessionStorage.getItem('user');
+        user = JSON.parse(user);
+        $.ajax({
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseDetail',
+            type:'get',
+            data:{"course_id":getQueryString('c_no')},
+            success:function(data){
+                console.log(data.data)
+//                console.log(data.data[3]['T_109']['T_109_1'][3])
+                var first_video=getQueryString('c_no')+'_1';
+                $('.course_title').html(data.data[1]);
+                $('.video-s').attr('src',data.data[3][getQueryString('c_no')][first_video][3]);
+//                for(var i=0;i<data.data[3].length;i++){
+//
+//                }
+                var badeg_num= 1,obj_d=data.data[3][getQueryString('c_no')];
+                for(o in obj_d){
+                    if(badeg_num==1){
+                        var li=$('<li class="active"><span class="badge">1</span><a href="javascript:void(0)" class="capter_t">'+obj_d[o][1]+'</a><p class="capter_c">'+obj_d[o][2]+'</p><span class="video_url">'+obj_d[o][3]+'</span></li>');
+                    }else {
+                        var li=$('<li><span class="badge">'+badeg_num+'</span><a href="javascript:void(0)" class="capter_t">'+obj_d[o][1]+'</a><p class="capter_c">'+obj_d[o][2]+'</p><span class="video_url">'+obj_d[o][3]+'</span></li>');
+                    }
+                    $('#course_list ul').append(li);
+                    badeg_num++;
+                }
+
+
+
+                $('.capter_t').click(function(){
+                    $('.video-s').attr('src',$(this).siblings('.video_url').html());
+                    $(this).parent('li').addClass('active').siblings().removeClass('active');
+                });
+            },
+            error: function (err) {
+                alert('err')
+            }
+        });
+
+        //查看是否已经提交作业
+        $.ajax({
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selScore',
+            type:'get',
+            data:{'course':getQueryString('c_no'),'name':user.name},
+            success:function(data){
+//                console.log(data)
+                if(data.data[0].isFill==1){
+                    $('.sub_work').html('你已完成该部分的练习').attr('disabled','disabled');
+                }else {
+                    $.ajax({
+                        url:'http://localhost/studyApi/PhalApi/Public/?service=Exercise.getExercise',
+                        type:'get',
+                        data:{'c_id':getQueryString('c_no')},
+                        success:function(data){
+                            console.log(data.data)
+                            var rightOption=[];
+                            for(var i=0;i<data.data.length;i++){
+                                var li=$(' <li> <span class="ti_title">'+data.data[i].content+'</span> <span class="a_score">'+data.data[i].score+'</span>\' <span class="answer-sel"></span><span class="answer-con"></span> <ul> <li><span class="sel">A</span>. <span class="answer answer_'+i+'"></span></li> <li><span class="sel">B</span>. <span class="answer answer_'+i+'""></span></li> <li><span class="sel">C</span>. <span class="answer answer_'+i+'""></span></li> <li><span class="sel">D</span>. <span class="answer answer_'+i+'""></span></li> </ul> </li>');
+                                $('#homework ol').append(li);
+                                var sel_option=[];
+                                rightOption.push(data.data[i].right_option);
+                                sel_option.push(data.data[i].right_option);
+                                sel_option.push(data.data[i].option_1);
+                                sel_option.push(data.data[i].option_2);
+                                sel_option.push(data.data[i].option_3);
+                                sel_option=unsortArr(sel_option);
+                                $('.answer_'+i).each(function(x){
+                                    $(this).html(sel_option[x])
+                                });
+                            }
+                            $('#homework ul li').click(function(){
+                                $(this).css('color','red').siblings().css('color','#333');
+                                $(this).parent().siblings('.answer-sel').html($(this).find('.sel').html());
+                                $(this).parent().siblings('.answer-con').html($(this).find('.answer').html());
+
+                            });
+
+                            //提交作业
+                            $('.sub_work').click(function(){
+                                var sum=0;
+                                for(var i=0;i<$('#homework ol>li').length;i++){
+                                    if(rightOption[i]==$('#homework ol>li').eq(i).find('.answer-con').html()){
+                                        sum+=Number($('#homework ol>li').eq(i).find('.a_score').html())
+                                    }
+                                }
+                                $.ajax({
+                                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.markScore',
+                                    data:{'course':getQueryString('c_no'),'name':user.name,'score':sum, 'isFill':1},
+                                    success:function(){
+                                        swal({
+                                            title:'success',
+                                            text:'提交成功',
+                                            type:'success',
+                                            showCancelButton:true,
+                                        }).then(function(isconfirm){
+                                            if(isconfirm==true){
+                                                window.location.reload();
+                                            }
+                                        });
+                                    },
+                                    error:function(err){
+                                        alert(err)
+                                    }
+
+                                });
+                            });
+                        },
+                        error:function(err){
+                            alert(err)
+                        }
+                    });
+                }
+            },
+            error:function(){}
+        });
+
+        //获取评论
+
+        $.ajax({
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Comment.getCommentList',
+            data:{'course_id':getQueryString('c_no')},
+            success:function(data){
+              for(var i=0;i<data.data.length;i++){
+                  var li_menu_1=$('<li class="menu_1"><div class="info"><span class="nick">'+data.data[i].nickname+'</span><span class="time">'+data.data[i].create_time+'</span></div><div class="con">'+data.data[i].content+'</div><div class="huifu">回复</div><div class="text_ar"><textarea></textarea><div class="sub_huifu">提交回复</div></div><span class="id">'+data.data[i].id+'</span><hr></li>');
+                  var a2=data.data[i];
+                  var ul_1=$('<ul class="ul_1"></ul>');
+                  for(var j=0;j<a2['children'].length;j++){
+
+                      var li_menu_1_1=$('<li class="menu_1_1"><div class="info"><span class="nick">'+a2['children'][j].nickname+'</span><span class="time">'+a2['children'][j].create_time+'</span></div><div class="con">'+a2['children'][j].content+'</div><div class="huifu">回复</div><div class="text_ar"><textarea></textarea><div class="sub_huifu">提交回复</div></div><span class="id">'+a2['children'][j].id+'</span><hr></li>');
+                      ul_1.append(li_menu_1_1);
+                      var a3=a2['children'][j];
+                      var ul_1_1=$('<ul class="ul_1_1"></ul>');
+                      for (var k=0;k<a3['children'].length;k++){
+                          var li_menu_1_1_1=$('<li class="menu_1_1_1"><div class="info"><span class="nick">'+a3['children'][k].nickname+'</span><span class="time">'+a3['children'][k].create_time+'</span></div><div class="con">'+a3['children'][k].content+'</div><hr></li>');
+                          ul_1_1.append(li_menu_1_1_1);
+                      }
+                      li_menu_1_1.append(ul_1_1)
+                  }
+                  li_menu_1.append(ul_1)
+
+                  $('.comment_zl').append(li_menu_1);
+              }
+
+                $('.huifu').click(function(){
+                    $(this).siblings('.text_ar').toggle()
+                });
+
+                $('.sub_huifu').click(function(){
+                    $.ajax({
+                        url:'http://localhost/studyApi/PhalApi/Public/?service=Comment.addCommentHead',
+                        data:{'course_id':getQueryString('c_no'),'parent_id':$(this).parent().siblings('.id').html(),"nickname":user.name,"create_time":timeStamp2String(),"content":$(this).siblings('textarea').val()},
+                        success:function(data){
+                            swal({
+                                title:'success',
+                                text:'提交成功',
+                                type:'success',
+                                showCancelButton:true,
+                            }).then(function(isconfirm){
+                                if(isconfirm==true){
+                                    window.location.reload();
+
+                                }
+                            });
+                        },
+                        error:function(err){
+                            alert(err)
+                        }
+                    });
+                });
+            },
+            error:function(err){
+                alert(err)
+            }
+        })
+
+        //发布问题
+        $('.sub_fb').click(function(){
+//            console.log(timeStamp2String())
+            $.ajax({
+                url:'http://localhost/studyApi/PhalApi/Public/?service=Comment.addCommentHead',
+                data:{'course_id':getQueryString('c_no'),'parent_id':0,"nickname":user.name,"create_time":timeStamp2String(),"content":$('.q_content').val()},
+                success:function(data){
+                    swal({
+                        title:'success',
+                        text:'提交成功',
+                        type:'success',
+                        showCancelButton:true,
+                    }).then(function(isconfirm){
+                        if(isconfirm==true){
+                            window.location.reload();
+                            $('.video-after li').eq(1).addClass('active').siblings().removeClass('active');
+                        }
+                    });
+                },
+                error:function(err){
+                    alert(err)
+                }
+            });
+        });
+
+
+
+
+
+    })
+
+
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    function unsortArr(arr){
+
+        return arr.sort(function(){ return 0.5 - Math.random() });
+    }
+    function timeStamp2String (){
+        var datetime = new Date();
+        var year = datetime.getFullYear();
+        var month = datetime.getMonth() + 1;
+        var date = datetime.getDate();
+        var hour = datetime.getHours();
+        var minute = datetime.getMinutes();
+        var second = datetime.getSeconds();
+        return year + "-" + month + "-" + date+" "+hour+":"+minute+":"+second;
+    };
 </script>
 </html>

@@ -33,7 +33,17 @@ class Api_Exercise extends PhalApi_Api
                 'option_3' => array('name' => 'option_3', 'require' => true, 'desc' => '选项三'),
                 'score' => array('name' => 'score', 'require' => true, 'desc' => '分值')
 
-            )
+            ),
+//            $c_id,$content,$right_opt,$opt1,$opt2,$opt3,$score
+        'addExercise'=>array(
+            'c_id'=>array('name' => 'c_id', 'require' => true, 'desc' => 'id'),
+            'content'=>array('name' => 'content', 'require' => true, 'desc' => 'content'),
+            'right_opt'=>array('name' => 'right_opt', 'require' => true, 'desc' => 'right_opt'),
+            'opt1'=>array('name' => 'opt1', 'require' => true, 'desc' => 'opt1'),
+            'opt2'=>array('name' => 'opt2', 'require' => true, 'desc' => 'opt2'),
+            'opt3'=>array('name' => 'opt3', 'require' => true, 'desc' => 'opt3'),
+            'score'=>array('name' => 'score', 'require' => true, 'desc' => 'score')
+        )
         );
     }
 
@@ -60,6 +70,12 @@ class Api_Exercise extends PhalApi_Api
     {
         $domain = new Domain_Exercise();
         return $domain->updateExercise($this->id, $this->c_id, $this->content, $this->right_option, $this->option_1, $this->option_2, $this->option_3, $this->score);
+    }
+
+    //上传练习题
+    public function addExercise(){
+        $domain=new Domain_Exercise();
+        return $domain->addExercise($this->c_id,$this->content,$this->right_opt,$this->opt1,$this->opt2,$this->opt3,$this->score);
     }
 
 

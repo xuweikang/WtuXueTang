@@ -64,4 +64,25 @@ class Model_Exercise extends PhalApi_Model_NotORM
         return $rs;
     }
 
+    //上传练习题
+    public function addExercise($c_id,$content,$right_opt,$opt1,$opt2,$opt3,$score){
+        $data = array(
+            'c_id'=>$c_id,
+            'content'=>$content,
+            'right_option'=>$right_opt,
+            'option_1'=>$opt1,
+            'option_2'=>$opt2,
+            'option_3'=>$opt3,
+            'score'=>$score
+        );
+        $rs = DI()->notorm->exercises
+            ->insert($data);
+        return $rs;
+    }
+
+
+
+
+
+
 }

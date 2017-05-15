@@ -9,12 +9,12 @@ class Domain_Comment
 	//递归获取评论列表
 	//
 
-	public function getCommentList($comment_id)
+	public function getCommentList($course_id)
 	{
 
 		$model = new Model_Comment();
 
-		$rs = $model->getCommentList($comment_id);
+		$rs = $model->getCommentList($course_id);
 
 		return $rs;
 	}
@@ -43,6 +43,22 @@ class Domain_Comment
 		$rs = $model -> batchDelComment($ids);
 		return $rs;
 
+	}
+
+	//获取讨论区内容
+	public function getCommentTitle($c_id){
+
+		$model = new Model_Comment();
+		$rs = $model -> getCommentTitle($c_id);
+		return $rs;
+	}
+
+	//新建顶层讨论
+	public function addCommentHead($course_id,$parent_id,$nickname,$creat_time,$content){
+
+		$model = new Model_Comment();
+		$rs = $model -> addCommentHead($course_id,$parent_id,$nickname,$creat_time,$content);
+		return $rs;
 	}
 }
 
