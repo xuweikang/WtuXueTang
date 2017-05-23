@@ -62,6 +62,7 @@
                         </div>
                         <ul class="dropMenu" style="display: none">
                             <li class="teacher_course"><a href="javascript:void(0)" class="teacher_course_a">教师入口</a></li>
+                            <li class="student_course"><a href="javascript:void(0)" class="student_course_a" data-toggle="modal"  data-target="#student_entry">学生入口</a></li>
                             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
                             <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
                             <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
@@ -86,9 +87,14 @@
                     </nav>
                 </div>
                 <div class="right pull-right">
-                    <input type="text" name="search" class="form-control" placeholder="Search" style="width: 115px">
-                    <button class="btn" style="background: none;color: #000"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
+                    <input type="text" name="search" class="form-control search_mh" placeholder="Search" style="width: 115px">
+                    <button class="btn btn_search" style="background: none;color: #000;visibility: hidden"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
                     </button>
+                    <div class="search_pp">
+                        <ul>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

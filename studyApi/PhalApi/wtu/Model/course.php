@@ -205,15 +205,15 @@ class Model_Course extends PhalApi_Model_NotORM{
         }
     }
 
-    //查询课程信息
 
 
 
     //获取选课学生最多的前4课程
 
 
-    public function selectCourseByPM(){
-        $sql="select * from (
+    public function selectCourseByPM($isLimit){
+        if($isLimit==1){
+            $sql="select * from (
 
 SELECT
 	*
@@ -234,6 +234,27 @@ ORDER BY
 	num DESC
 LIMIT 0,
  4 ";
+        }else{
+            $sql="select * from (
+
+SELECT
+	*
+FROM
+	course_configure where c_exmine=2 )table1
+INNER JOIN (
+	SELECT
+		count(*) AS num,
+		course
+	FROM
+		student_course
+	GROUP BY
+		course
+) table2 ON table1.c_no = table2.course
+GROUP BY
+	course
+ORDER BY
+	num DESC ";
+        }
 
         $rs=$this->getORM()->queryAll($sql,array());
 
@@ -241,7 +262,13 @@ LIMIT 0,
     }
 
     public function selectCourseByPMId($c_id){
-        $sql="select * from (
+
+        $rs1=DI()->notorm->student_course
+            ->select('*')
+            ->where('course= ? ',$c_id)
+            ->fetchRows();
+        if($rs1){
+            $sql="select * from (
 
 SELECT
 	*
@@ -255,8 +282,12 @@ INNER JOIN (
 		student_course
 	GROUP BY
 		course
-) table2 ON table1.c_no = table2.course
-"
+) table2 ON table1.c_no = table2.course";
+        }else{
+            $sql="SELECT * FROM course_configure where c_exmine=2 and c_no='{$c_id}'";
+        }
+
+
 ;
 
         $rs=$this->getORM()->queryAll($sql,array());
@@ -320,4 +351,37 @@ INNER JOIN (
             ->fetchRows();
         return $rs;
     }
+
+    //模糊搜索查询课程
+    public function searchCourse($key){
+
+        $sql="SELECT * FROM course_configure WHERE c_name LIKE '%{$key}%' AND c_exmine='2' ";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
+
+    //查询首页显示的课程
+    public function findCourse(){
+
+        $sql="select a.* from (select course_configure.* from course_configure where c_exmine ) a INNER JOIN course_capter ON a.c_no = course_capter.c_id  GROUP BY a.c_no";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
+
+
+    //学生查看选择课程
+    public function findCourseSelected($name){
+
+        $sql="select * from course_configure a  INNER JOIN (select * from student_course where name = '{$name}') b on a.c_no = b.course;";
+
+        $rs=$this->getORM()->queryAll($sql,array());
+
+        return $rs;
+    }
+
+
 }

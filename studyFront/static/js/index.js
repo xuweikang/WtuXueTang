@@ -4,8 +4,28 @@
 $(function () {
 
     //搜索
-    $('.btn_search').click(function(){
-        //SELECT * FROM course_configure WHERE c_name LIKE '%php%'
+    $('.search_mh').keyup(function(){
+        if($(this).val()!=''){
+            $.ajax({
+                url:'http://localhost:80/studyApi/PhalApi/Public/?service=Course.searchCourse',
+                type:'get',
+                data:{'key':$(this).val()},
+                success:function(data){
+                    $('.search_pp ul li').remove();
+
+                    var d=data.data;
+                    for(var i=0;i<d.length;i++){
+                        var href="http://localhost/studyFront/dist/about.html?c_no="+d[i].c_no;
+                        var li=$('<li><a href='+href+'>'+d[i].c_name+'</a></li>');
+                        $('.search_pp ul').append(li);
+                    }
+                    $('.search_pp').show();
+                }
+            });
+        }else {
+            $('.search_pp').hide();
+            $('.search_pp ul li').remove();
+        }
     });
 
 
@@ -46,17 +66,22 @@ $(function () {
         $('.userinfo').find('span').html(user.name);
 
         //学生身份不显示该入口
-        if(user.role!=2){
+        if(user.role==3){  //显示教师入口
             $('.teacher_course').show();
             $('.teacher_course_a').click(function(){
                 window.location.href='http://localhost/studyFront/dist/teacher.html';
             });
-        }else {
+        }else if(user.role==2){  ////显示学生入口
+            $('.student_course').show();
+        }
+        else {
             $('.teacher_course').hide();
         }
 
     } else {
         $('.basic_sign').hide();
+        $('.search_input').hide();
+        $('.search').hide();
         $('#header .head_wrap .right').css('display','none');
 
     }

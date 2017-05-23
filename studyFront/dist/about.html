@@ -62,6 +62,7 @@
                         </div>
                         <ul class="dropMenu" style="display: none">
                             <li class="teacher_course"><a href="javascript:void(0)" class="teacher_course_a">教师入口</a></li>
+                            <li class="student_course"><a href="javascript:void(0)" class="student_course_a" data-toggle="modal"  data-target="#student_entry">学生入口</a></li>
                             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
                             <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
                             <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
@@ -86,9 +87,14 @@
                     </nav>
                 </div>
                 <div class="right pull-right">
-                    <input type="text" name="search" class="form-control" placeholder="Search" style="width: 115px">
-                    <button class="btn" style="background: none;color: #000"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
+                    <input type="text" name="search" class="form-control search_mh" placeholder="Search" style="width: 115px">
+                    <button class="btn btn_search" style="background: none;color: #000;visibility: hidden"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
                     </button>
+                    <div class="search_pp">
+                        <ul>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,6 +179,12 @@
 <script src="../static/js/index.js"></script>
 <script>
     $(function(){
+        var user = sessionStorage.getItem('user');
+        user = JSON.parse(user);
+
+
+
+
         //获取课程配置信息
         $.ajax({
             url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByPMId',
@@ -183,7 +195,12 @@
                 $('.author').html(data.data[0].c_creator);
                 $('.cat').html(data.data[0].c_classify);
                 $('.video_img img').attr('src',data.data[0].c_img);
-                $('.info1 .xkrs').html(data.data[0].num);
+
+                if(data.data[0].num){
+                    $('.info1 .xkrs').html(data.data[0].num);
+                }else {
+                    $('.info1 .xkrs').html(0);
+                }
                 $('.info1 .kksj').html((data.data[0].c_start).split(' ')[0]);
                 $('.kcno').html(data.data[0].c_no);
                 $('.jssj').html(data.data[0].c_end.split(' ')[0]);
@@ -199,11 +216,55 @@
                 }else {
                     $('.join_course').html('我要选课');
                 }
+                //查看是否有选课记录
+                $.ajax({
+                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selScore',
+                    type:'get',
+                    data:{'course':getQueryString('c_no'),'name':user.name},
+                    success:function(data){
+                        if(data.data.length==0){
+
+                            $('.join_course').click(function(){
+                                swal({
+                                    title:'success',
+                                    text:'选课成功',
+                                    type:'success',
+                                    showCancelButton:true,
+                                }).then(function(isconfirm){
+                                    if(isconfirm==true){
+                                        $.ajax({
+                                            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addStudentCourse',
+                                            data:{"name":user.name,"course":getQueryString('c_no'),"score":0,"isFill":0},
+                                            type:'get',
+                                            success:function(){
+                                                window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
+                                            },
+                                            error: function (err) {
+                                                alert(err)
+                                            }
+                                        })
+                                    }
+                                });
+                            });
+                        }else {
+                            $('.join_course').html('直接进入');
+                            $('.join_course').click(function(){
+                                window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
+                            });
+                        }
+                    },
+                    error:function(err){
+                        alert(err)
+                    }
+                });
+
+
             },
             error:function(err){
                 alert(err)
             }
         });
+
 
         //获取课程列表信息
         $.ajax({
@@ -224,30 +285,8 @@
         });
     })
 
-    var user = sessionStorage.getItem('user');
-    user = JSON.parse(user);
-    $('.join_course').click(function(){
-        swal({
-            title:'success',
-            text:'选课成功',
-            type:'success',
-            showCancelButton:true,
-        }).then(function(isconfirm){
-            if(isconfirm==true){
-                $.ajax({
-                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addStudentCourse',
-                    data:{"name":user.name,"course":getQueryString('c_no'),"score":0,"isFill":0},
-                    type:'get',
-                    success:function(){
-                        window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
-                    },
-                    error: function (err) {
-                        alert(err)
-                    }
-                })
-            }
-        });
-    });
+
+
 
     function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");

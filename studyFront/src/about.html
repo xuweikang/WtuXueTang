@@ -98,6 +98,12 @@
 <script src="../static/js/index.js"></script>
 <script>
     $(function(){
+        var user = sessionStorage.getItem('user');
+        user = JSON.parse(user);
+
+
+
+
         //获取课程配置信息
         $.ajax({
             url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByPMId',
@@ -108,7 +114,12 @@
                 $('.author').html(data.data[0].c_creator);
                 $('.cat').html(data.data[0].c_classify);
                 $('.video_img img').attr('src',data.data[0].c_img);
-                $('.info1 .xkrs').html(data.data[0].num);
+
+                if(data.data[0].num){
+                    $('.info1 .xkrs').html(data.data[0].num);
+                }else {
+                    $('.info1 .xkrs').html(0);
+                }
                 $('.info1 .kksj').html((data.data[0].c_start).split(' ')[0]);
                 $('.kcno').html(data.data[0].c_no);
                 $('.jssj').html(data.data[0].c_end.split(' ')[0]);
@@ -124,11 +135,55 @@
                 }else {
                     $('.join_course').html('我要选课');
                 }
+                //查看是否有选课记录
+                $.ajax({
+                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selScore',
+                    type:'get',
+                    data:{'course':getQueryString('c_no'),'name':user.name},
+                    success:function(data){
+                        if(data.data.length==0){
+
+                            $('.join_course').click(function(){
+                                swal({
+                                    title:'success',
+                                    text:'选课成功',
+                                    type:'success',
+                                    showCancelButton:true,
+                                }).then(function(isconfirm){
+                                    if(isconfirm==true){
+                                        $.ajax({
+                                            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addStudentCourse',
+                                            data:{"name":user.name,"course":getQueryString('c_no'),"score":0,"isFill":0},
+                                            type:'get',
+                                            success:function(){
+                                                window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
+                                            },
+                                            error: function (err) {
+                                                alert(err)
+                                            }
+                                        })
+                                    }
+                                });
+                            });
+                        }else {
+                            $('.join_course').html('直接进入');
+                            $('.join_course').click(function(){
+                                window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
+                            });
+                        }
+                    },
+                    error:function(err){
+                        alert(err)
+                    }
+                });
+
+
             },
             error:function(err){
                 alert(err)
             }
         });
+
 
         //获取课程列表信息
         $.ajax({
@@ -149,30 +204,8 @@
         });
     })
 
-    var user = sessionStorage.getItem('user');
-    user = JSON.parse(user);
-    $('.join_course').click(function(){
-        swal({
-            title:'success',
-            text:'选课成功',
-            type:'success',
-            showCancelButton:true,
-        }).then(function(isconfirm){
-            if(isconfirm==true){
-                $.ajax({
-                    url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addStudentCourse',
-                    data:{"name":user.name,"course":getQueryString('c_no'),"score":0,"isFill":0},
-                    type:'get',
-                    success:function(){
-                        window.location.href='http://localhost/studyFront/dist/video.html?c_no='+getQueryString('c_no')
-                    },
-                    error: function (err) {
-                        alert(err)
-                    }
-                })
-            }
-        });
-    });
+
+
 
     function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");

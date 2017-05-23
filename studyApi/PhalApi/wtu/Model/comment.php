@@ -32,14 +32,14 @@ class Model_Comment extends PhalApi_Model_NotORM{
    //获取文章评论列表
     public function getComment($c_id){
         if($c_id){
-            $rs=DI()->notorm->comment_title
+            $rs=DI()->notorm->course_comment
                 ->select('*')
-                ->where("c_id = ?",$c_id)
+                ->where("course_id = ?",$c_id)
                 ->fetchRows();
         }else{
-            $rs=DI()->notorm->comment_title
+            $rs=DI()->notorm->course_comment
                 ->select('*')
-                ->order("c_id desc")
+                ->order("course_id desc")
                 ->fetchRows();
         }
         return $rs;
@@ -51,7 +51,7 @@ class Model_Comment extends PhalApi_Model_NotORM{
             ->where('id= ?',$id)
             ->delete();
         $rs2=DI()->notorm->course_comment
-            ->where('comment_id= ?',$id)
+            ->where('id= ?',$id)
             ->delete();
 
         if($rs1==false || $rs2==false){

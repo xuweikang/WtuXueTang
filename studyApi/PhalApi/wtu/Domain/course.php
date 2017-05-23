@@ -115,9 +115,9 @@ class Domain_Course{
 
 
     //获取选课学生最多的前4课程
-    public function selectCourseByPM(){
+    public function selectCourseByPM($isLimit){
         $model=new Model_Course();
-        $rs=$model->selectCourseByPM();
+        $rs=$model->selectCourseByPM($isLimit);
         return $rs;
     }
     public function selectCourseByPMId($c_id){
@@ -161,6 +161,29 @@ class Domain_Course{
 
         $model=new Model_Course();
         $rs=$model->selScore($name,$course);
+        return $rs;
+    }
+
+    //模糊搜索查询课程
+    public function searchCourse($key){
+
+        $model=new Model_Course();
+        $rs=$model->searchCourse($key);
+        return $rs;
+    }
+    //查询首页显示的课程
+    public function findCourse(){
+
+        $model=new Model_Course();
+        $rs=$model->findCourse();
+        return $rs;
+    }
+
+    //学生查看选择课程
+    public function findCourseSelected($name){
+
+        $model=new Model_Course();
+        $rs=$model->findCourseSelected($name);
         return $rs;
     }
 }

@@ -68,7 +68,7 @@ class Api_Course extends PhalApi_Api
               'option'=>array('name'=>'option','require'=>true,'desc'=>'具体课程操作(2:通过，1：不通过)')
           ),
           'selectCourseByPM'=>array(
-
+                'isLimit'=>array('name'=>'isLimit','require'=>true,'desc'=>'是否取前4')
           ),
           'selectCourseByCat'=>array(
 
@@ -122,6 +122,13 @@ class Api_Course extends PhalApi_Api
               'name'=>array('name'=>'name','require'=>true),
               'course'=>array('name'=>'course','require'=>true)
           ),
+          'searchCourse'=>array(
+              'key'=>array('name'=>'key','require'=>true)
+          ),
+          'findCourse'=>array(),
+          'findCourseSelected'=>array(
+              'name'=>array('name'=>'name','require'=>true)
+          )
       );
   }
 
@@ -218,7 +225,7 @@ class Api_Course extends PhalApi_Api
     //获取选课学生最多的前4课程
     public function selectCourseByPM(){
         $domain=new Domain_Course();
-        $rs=$domain->selectCourseByPM();
+        $rs=$domain->selectCourseByPM($this->isLimit);
         return $rs;
     }
 
@@ -276,6 +283,30 @@ class Api_Course extends PhalApi_Api
 
         $domain=new Domain_Course();
         $rs=$domain->selScore($this->name,$this->course);
+        return $rs;
+    }
+
+    //模糊搜索查询课程
+    public function searchCourse(){
+
+        $domain=new Domain_Course();
+        $rs=$domain->searchCourse($this->key);
+        return $rs;
+    }
+
+    //查询首页显示的课程
+    public function findCourse(){
+
+        $domain=new Domain_Course();
+        $rs=$domain->findCourse();
+        return $rs;
+    }
+
+    //学生查看选择课程
+    public function findCourseSelected(){
+
+        $domain=new Domain_Course();
+        $rs=$domain->findCourseSelected($this->name);
         return $rs;
     }
 }

@@ -18,9 +18,13 @@
             </el-table-column>
             <el-table-column type="index" width="60">
             </el-table-column>
-            <el-table-column prop="c_id" label="课程编号" width="100">
+            <el-table-column prop="course_id" label="课程编号" width="100">
             </el-table-column>
-            <el-table-column prop="comment_title" label="评论标题" width="400">
+            <el-table-column prop="nickname" label="昵称" width="100">
+            </el-table-column>
+            <el-table-column prop="content" label="评论内容" width="400">
+            </el-table-column>
+            <el-table-column prop="create_time" label="评论时间" width="400">
             </el-table-column>
             <el-table-column label="操作" width="200">
                 <template scope="scope">
@@ -72,7 +76,7 @@
             selsChange: function (sels) {
                 this.sels = sels;
             },
-            //获取待审核用户列表
+            //获取评论列表
             getComments: function () {
                 let para = {
                     c_id: this.filters.id
@@ -81,7 +85,7 @@
                 NProgress.start();
                 getComments(para).then((res) => {
                     // console.log( res)
-                    this.commentData = res.data.data;
+                this.commentData = res.data.data;
                 this.loading = false;
                 NProgress.done();
             })

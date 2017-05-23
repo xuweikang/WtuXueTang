@@ -58,6 +58,7 @@
                         </div>
                         <ul class="dropMenu" style="display: none">
                             <li class="teacher_course"><a href="javascript:void(0)" class="teacher_course_a">教师入口</a></li>
+                            <li class="student_course"><a href="javascript:void(0)" class="student_course_a" data-toggle="modal"  data-target="#student_entry">学生入口</a></li>
                             <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myTx">设置</a></li>
                             <li style="height:0.5px;width: 80px;background: #d4cdcd;"></li>
                             <li><a href="javascript:void(0)" class="exit">退出登录</a></li>
@@ -82,9 +83,14 @@
                     </nav>
                 </div>
                 <div class="right pull-right">
-                    <input type="text" name="search" class="form-control" placeholder="Search" style="width: 115px">
-                    <button class="btn" style="background: none;color: #000"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
+                    <input type="text" name="search" class="form-control search_mh" placeholder="Search" style="width: 115px">
+                    <button class="btn btn_search" style="background: none;color: #000;visibility: hidden"><span class="glyphicon glyphicon-search" ></span><br/>Search</a>
                     </button>
+                    <div class="search_pp">
+                        <ul>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -178,40 +184,9 @@
     </div>
 </div>
 
-<div class="course">
+<div class="course" style="margin-top: 50px">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="thumbnail thumbnail_small">
-                    <a href="" class="thumbnail__link">
-                        <img src="../static/image/news2.jpg" height="153" width="270" alt="News">
-                    </a>
-                    <div class="caption thumbnail__caption">
-                        <div class="news caption__news">
-                            <p class="news__category yellow-line">Economy</p>
-                            <a href="news.html" class="news__link">
-                                <p class="news__text">Еhe world's economy is improving and good times</p>
-                            </a>
-                        </div>
-                        <div class="posted">
-                            <span class="posted__date">today, 12:11</span>
-                            <ul class="posted__icon">
-                                <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>11
-                                            </span>
-                                </li>
-                                <li>
-                                                <span>
-                                                <i class="icon-eye"></i>1.1k
-                                            </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
@@ -255,6 +230,22 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="student_entry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel4">我的课程</h4>
+            </div>
+
+            <ol class="myCourse">
+
+            </ol>
+
+        </div>
+    </div>
+</div>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -269,7 +260,7 @@
         //推荐课程
         $.ajax({
             type:'get',
-            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByPM',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.selectCourseByPM&isLimit=1',
             success:function(data){
                 console.log(data)
                 $('.course_list').each(function(x) {
@@ -325,6 +316,56 @@
             },
             error:function(){}
         });
+
+        //首页课程初始化显示
+        $.ajax({
+            type:'get',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.findCourse',
+            success:function(data){
+                console.log(data.data)
+               for(var i=0;i<data.data.length;){
+                   var row=$('<div class="row"></div>');
+                   $('.course>.container').append(row);
+                   i+=4;
+               }
+                for(var i=0;i<data.data.length;i++){
+                    var url='';
+                    var user = sessionStorage.getItem('user');
+                    if (user) {
+                        url='http://localhost/studyFront/dist/about.html?c_no='+data.data[i].c_no;
+                    } else {
+                        url='http://localhost/studyFront/dist/login.html'
+                    }
+                    var course_list=$('<div class="col-sm-3"> <div class="thumbnail thumbnail_small"> <a href='+url+' class="thumbnail__link"> <img src='+data.data[i].c_img+'  alt="News" style="height: 166px!important;"> </a> <div class="caption thumbnail__caption"> <div class="news caption__news"> <p class="news__category yellow-line">'+data.data[i].c_name+'</p> <a href='+url+' class="news__link"> <p class="news__text">'+data.data[i].c_introduce+'</p> </a> </div> <div class="posted"> <span class="posted__date">'+data.data[i].c_start+'</span> <ul class="posted__icon"> <li>  </li> <li>  </li> </ul> </div> </div> </div></div>');
+
+                   $('.course>.container .row').eq(parseInt(i/4)).append(course_list);
+//                       console.log(i/4)
+
+                }
+
+            },
+            error:function(){}
+        });
+
+
+        //显示已经选修的课程
+        var user = sessionStorage.getItem('user');
+        user = JSON.parse(user);
+        $.ajax({
+            type:'get',
+            url:'http://localhost/studyApi/PhalApi/Public/?service=Course.findCourseSelected&name='+user.name,
+            success:function(data){
+
+                for(var i=0;i<data.data.length;i++){
+                    var url='http://localhost/studyFront/dist/about.html?c_no='+data.data[i].c_no;
+                    var li=$('<li><a href='+url+'>'+data.data[i].c_name+'</a></li>');
+                    $('.myCourse').append(li);
+                }
+
+
+            },
+            error:function(){}
+        })
     })
 </script>
 </body>
