@@ -5,22 +5,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php" afterPath="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/.idea/workspace.xml" afterPath="$PROJECT_DIR$/studyFront/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/dist/about.html" afterPath="$PROJECT_DIR$/studyFront/dist/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/dist/comment.html" afterPath="$PROJECT_DIR$/studyFront/dist/comment.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/dist/course_detail_teacher.html" afterPath="$PROJECT_DIR$/studyFront/dist/course_detail_teacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/dist/index.html" afterPath="$PROJECT_DIR$/studyFront/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/dist/teacher.html" afterPath="$PROJECT_DIR$/studyFront/dist/teacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/dist/video.html" afterPath="$PROJECT_DIR$/studyFront/dist/video.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/src/about.html" afterPath="$PROJECT_DIR$/studyFront/src/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/src/include/head.html" afterPath="$PROJECT_DIR$/studyFront/src/include/head.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/src/index.html" afterPath="$PROJECT_DIR$/studyFront/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/static/css/header.css" afterPath="$PROJECT_DIR$/studyFront/static/css/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/static/css/main.css" afterPath="$PROJECT_DIR$/studyFront/static/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/static/js/index.js" afterPath="$PROJECT_DIR$/studyFront/static/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vueAdmin/src/pages/nav3/comment.vue" afterPath="$PROJECT_DIR$/vueAdmin/src/pages/nav3/comment.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studyFront/src/course_detail_teacher.html" afterPath="$PROJECT_DIR$/studyFront/src/course_detail_teacher.html" />
     </list>
     <ignored path="wtuStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +33,8 @@
       <file leaf-file-name="course.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.692307">
-              <caret line="210" column="39" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="39" />
+            <state vertical-scroll-proportion="-12.461538">
+              <caret line="90" column="81" selection-start-line="90" selection-start-column="81" selection-end-line="90" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -62,36 +50,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="course.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="course.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.205129">
-              <caret line="357" column="90" selection-start-line="357" selection-start-column="90" selection-end-line="357" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.15492958">
+              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
               <folding>
-                <marker date="1495535245177" expanded="true" signature="3421:3534" placeholder="select kc.* ..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="3421:3553" placeholder="select kc.* ..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="3878:3953" placeholder="select * fro..course_capter..." />
-                <marker date="1495535245177" expanded="true" signature="3878:3954" placeholder="select kc.* ..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="5694:5947" placeholder="select * fro..*..." />
-                <marker date="1495535245177" expanded="true" signature="5711:5760" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="5783:5859" placeholder="SELECT count..student_course..." />
-                <marker date="1495535245177" expanded="true" signature="5984:6225" placeholder="select * fro..*..." />
-                <marker date="1495535245177" expanded="true" signature="6001:6050" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="6073:6149" placeholder="SELECT count..student_course..." />
-                <marker date="1495535245177" expanded="true" signature="6540:6764" placeholder="select * fro..*..." />
-                <marker date="1495535245177" expanded="true" signature="6557:6625" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="6648:6724" placeholder="SELECT count..student_course..." />
-                <marker date="1495535245177" expanded="true" signature="6800:6857" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="6800:6866" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="7036:7129" placeholder="SELECT c_sta..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="7626:7743" placeholder="select * fro..user_identity..." />
-                <marker date="1495535245177" expanded="true" signature="7668:7721" placeholder="select * fro..student_course..." />
-                <marker date="1495535245177" expanded="true" signature="8501:8560" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="8501:8577" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="8728:8884" placeholder="SELECT * FRO..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="8745:8807" placeholder="select cours..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="9047:9168" placeholder="select * fro..course_configure..." />
-                <marker date="1495535245177" expanded="true" signature="9093:9144" placeholder="select * fro..student_course..." />
+                <marker date="1495604920883" expanded="true" signature="3893:4006" placeholder="select kc.* ..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="3893:4025" placeholder="select kc.* ..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="4350:4425" placeholder="select * fro..course_capter..." />
+                <marker date="1495604920883" expanded="true" signature="4350:4426" placeholder="select kc.* ..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="6166:6419" placeholder="select * fro..*..." />
+                <marker date="1495604920883" expanded="true" signature="6183:6232" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="6255:6331" placeholder="SELECT count..student_course..." />
+                <marker date="1495604920883" expanded="true" signature="6456:6697" placeholder="select * fro..*..." />
+                <marker date="1495604920883" expanded="true" signature="6473:6522" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="6545:6621" placeholder="SELECT count..student_course..." />
+                <marker date="1495604920883" expanded="true" signature="7012:7236" placeholder="select * fro..*..." />
+                <marker date="1495604920883" expanded="true" signature="7029:7097" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="7120:7196" placeholder="SELECT count..student_course..." />
+                <marker date="1495604920883" expanded="true" signature="7272:7329" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="7272:7338" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="7508:7601" placeholder="SELECT c_sta..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="8098:8215" placeholder="select * fro..user_identity..." />
+                <marker date="1495604920883" expanded="true" signature="8140:8193" placeholder="select * fro..student_course..." />
+                <marker date="1495604920883" expanded="true" signature="8973:9032" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="8973:9049" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="9200:9356" placeholder="SELECT * FRO..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="9217:9279" placeholder="select cours..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="9519:9640" placeholder="select * fro..course_configure..." />
+                <marker date="1495604920883" expanded="true" signature="9565:9616" placeholder="select * fro..student_course..." />
               </folding>
             </state>
           </provider>
@@ -120,18 +108,18 @@
       <file leaf-file-name="comment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6153846">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="comment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70422536">
-              <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+            <state vertical-scroll-proportion="-11.846154">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="26" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -150,8 +138,8 @@
       <file leaf-file-name="course.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="181" column="3" selection-start-line="181" selection-start-column="3" selection-end-line="187" selection-end-column="5" />
+            <state vertical-scroll-proportion="-9.923077">
+              <caret line="17" column="45" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -187,10 +175,10 @@
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/exercise.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/comment.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/comment.php" />
+        <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php" />
         <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php" />
-        <option value="$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php" />
       </list>
     </option>
   </component>
@@ -234,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,6 +319,10 @@
               <option name="myItemId" value="wtu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -362,6 +353,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,10 +407,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1932" height="1048" extended-state="1" />
+    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25241676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2556391" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -762,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="181" column="3" selection-start-line="181" selection-start-column="3" selection-end-line="187" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -786,50 +770,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.692307">
-          <caret line="210" column="39" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.205129">
-          <caret line="357" column="90" selection-start-line="357" selection-start-column="90" selection-end-line="357" selection-end-column="90" />
-          <folding>
-            <marker date="1495535245177" expanded="true" signature="3421:3534" placeholder="select kc.* ..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="3421:3553" placeholder="select kc.* ..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="3878:3953" placeholder="select * fro..course_capter..." />
-            <marker date="1495535245177" expanded="true" signature="3878:3954" placeholder="select kc.* ..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="5694:5947" placeholder="select * fro..*..." />
-            <marker date="1495535245177" expanded="true" signature="5711:5760" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="5783:5859" placeholder="SELECT count..student_course..." />
-            <marker date="1495535245177" expanded="true" signature="5984:6225" placeholder="select * fro..*..." />
-            <marker date="1495535245177" expanded="true" signature="6001:6050" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="6073:6149" placeholder="SELECT count..student_course..." />
-            <marker date="1495535245177" expanded="true" signature="6540:6764" placeholder="select * fro..*..." />
-            <marker date="1495535245177" expanded="true" signature="6557:6625" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="6648:6724" placeholder="SELECT count..student_course..." />
-            <marker date="1495535245177" expanded="true" signature="6800:6857" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="6800:6866" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="7036:7129" placeholder="SELECT c_sta..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="7626:7743" placeholder="select * fro..user_identity..." />
-            <marker date="1495535245177" expanded="true" signature="7668:7721" placeholder="select * fro..student_course..." />
-            <marker date="1495535245177" expanded="true" signature="8501:8560" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="8501:8577" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="8728:8884" placeholder="SELECT * FRO..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="8745:8807" placeholder="select cours..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="9047:9168" placeholder="select * fro..course_configure..." />
-            <marker date="1495535245177" expanded="true" signature="9093:9144" placeholder="select * fro..student_course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="71" />
           <folding />
         </state>
@@ -837,9 +780,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70422536">
-          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        <state vertical-scroll-proportion="-11.846154">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="26" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Domain/course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.923077">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Api/course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.461538">
+          <caret line="90" column="81" selection-start-line="90" selection-start-column="81" selection-end-line="90" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studyApi/PhalApi/wtu/Model/course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15492958">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding>
+            <marker date="1495604920883" expanded="true" signature="3893:4006" placeholder="select kc.* ..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="3893:4025" placeholder="select kc.* ..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="4350:4425" placeholder="select * fro..course_capter..." />
+            <marker date="1495604920883" expanded="true" signature="4350:4426" placeholder="select kc.* ..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="6166:6419" placeholder="select * fro..*..." />
+            <marker date="1495604920883" expanded="true" signature="6183:6232" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="6255:6331" placeholder="SELECT count..student_course..." />
+            <marker date="1495604920883" expanded="true" signature="6456:6697" placeholder="select * fro..*..." />
+            <marker date="1495604920883" expanded="true" signature="6473:6522" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="6545:6621" placeholder="SELECT count..student_course..." />
+            <marker date="1495604920883" expanded="true" signature="7012:7236" placeholder="select * fro..*..." />
+            <marker date="1495604920883" expanded="true" signature="7029:7097" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="7120:7196" placeholder="SELECT count..student_course..." />
+            <marker date="1495604920883" expanded="true" signature="7272:7329" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="7272:7338" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="7508:7601" placeholder="SELECT c_sta..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="8098:8215" placeholder="select * fro..user_identity..." />
+            <marker date="1495604920883" expanded="true" signature="8140:8193" placeholder="select * fro..student_course..." />
+            <marker date="1495604920883" expanded="true" signature="8973:9032" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="8973:9049" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="9200:9356" placeholder="SELECT * FRO..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="9217:9279" placeholder="select cours..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="9519:9640" placeholder="select * fro..course_configure..." />
+            <marker date="1495604920883" expanded="true" signature="9565:9616" placeholder="select * fro..student_course..." />
+          </folding>
         </state>
       </provider>
     </entry>

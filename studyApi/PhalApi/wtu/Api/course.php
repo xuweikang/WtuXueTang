@@ -88,11 +88,7 @@ class Api_Course extends PhalApi_Api
           ),
 //          $this->c_id,$this->capter_id,$this->c_content,$this->capter_introduce,$this->c_url
           'addCourseChapter'=>array(
-              'c_id'=>array('name'=>'c_id','require'=>'true'),
-              'capter_id'=>array('name'=>'capter_id','require'=>'true'),
-              'c_content'=>array('name'=>'c_content','require'=>'true'),
-              'capter_introduce'=>array('name'=>'capter_introduce','require'=>'true'),
-              'c_url'=>array('name'=>'c_url','require'=>'true')
+              'dataArr'=>array('name'=>'dataArr','require'=>'true','type'=>'array')
           ),
           'getCourseChapter'=>array(
               'course_id'=>array(
@@ -128,6 +124,9 @@ class Api_Course extends PhalApi_Api
           'findCourse'=>array(),
           'findCourseSelected'=>array(
               'name'=>array('name'=>'name','require'=>true)
+          ),
+          'removeCourseC'=>array(
+              'id'=>array('name'=>'id','require'=>true)
           )
       );
   }
@@ -152,7 +151,7 @@ class Api_Course extends PhalApi_Api
     //上传课程详细章节
     public function addCourseChapter(){
         $domain=new Domain_Course();
-        return $domain->addCourseChapter($this->c_id,$this->capter_id,$this->c_content,$this->capter_introduce,$this->c_url);
+        return $domain->addCourseChapter($this->dataArr);
     }
 
     //获得所有课程列表
@@ -307,6 +306,13 @@ class Api_Course extends PhalApi_Api
 
         $domain=new Domain_Course();
         $rs=$domain->findCourseSelected($this->name);
+        return $rs;
+    }
+    //删除课程章节
+    public function removeCourseC(){
+
+        $domain=new Domain_Course();
+        $rs=$domain->removeCourseC($this->id);
         return $rs;
     }
 }

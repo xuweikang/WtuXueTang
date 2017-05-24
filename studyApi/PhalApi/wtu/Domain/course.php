@@ -15,9 +15,9 @@ class Domain_Course{
     }
 
     //上传课程详细章节
-    public function addCourseChapter($c_id,$capter_id,$c_content,$capter_introduce,$c_url){
+    public function addCourseChapter($dataArr){
       $model=new Model_Course();
-        return $model->addCourseChapter($c_id,$capter_id,$c_content,$capter_introduce,$c_url);
+        return $model->addCourseChapter($dataArr);
     }
 
     //获得所有课程列表
@@ -184,6 +184,14 @@ class Domain_Course{
 
         $model=new Model_Course();
         $rs=$model->findCourseSelected($name);
+        return $rs;
+    }
+
+    //删除课程章节
+    public function removeCourseC($id){
+
+        $model=new Model_Course();
+        $rs=$model->removeCourseC($id);
         return $rs;
     }
 }

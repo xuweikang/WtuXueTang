@@ -30,23 +30,33 @@ class Model_Course extends PhalApi_Model_NotORM{
         return $rs;
     }
     //上传课程详细章节
-    public function addCourseChapter($c_id,$capter_id,$c_content,$capter_introduce,$c_url){
+    public function addCourseChapter($dataArr){
 
         $rs2 =DI()->notorm->course_capter
-            ->where('c_id= ?',$c_id)
+            ->where('c_id= ?',$dataArr[0]['c_id'])
             ->delete();
+        foreach ($dataArr as $cm) {
+            $c_id=$cm['c_id'];
+            $capter_id=$cm['capter_id'];
+            $c_content=$cm['c_content'];
+            $capter_introduce=$cm['capter_introduce'];
+            $c_url=$cm['c_url'];
 
-        $data = array(
-            'c_id'=>$c_id,
-            'capter_id'=>$capter_id,
-            'c_content'=>$c_content,
-            'capter_introduce'=>$capter_introduce,
-            'c_url'=>$c_url
+         
 
-        );
-        $rs = DI()->notorm->course_capter
-            ->insert($data);
-        return $rs;
+            $data = array(
+                'c_id'=>$c_id,
+                'capter_id'=>$capter_id,
+                'c_content'=>$c_content,
+                'capter_introduce'=>$capter_introduce,
+                'c_url'=>$c_url
+
+            );
+            $rs = DI()->notorm->course_capter
+                ->insert($data);
+        }
+
+
     }
 
 
@@ -108,7 +118,7 @@ class Model_Course extends PhalApi_Model_NotORM{
             return 'delete error';
         }
     }
-    //删除课程章节
+    //删除课程
     public function removeCourseCapter($course_id){
         $rs1 =DI()->notorm->course_configure
             ->where('c_no= ?',$course_id)
@@ -120,6 +130,17 @@ class Model_Course extends PhalApi_Model_NotORM{
             ->where('c_id= ?',$course_id)
             ->delete();
         if($rs1==false || $rs2==false || $rs3==false){
+            return 'delete error';
+        }
+    }
+    //删除课程章节
+    public function removeCourseC($id){
+
+        $rs =DI()->notorm->course_capter
+            ->where('id= ?',$id)
+            ->delete();
+
+        if($rs==false){
             return 'delete error';
         }
     }

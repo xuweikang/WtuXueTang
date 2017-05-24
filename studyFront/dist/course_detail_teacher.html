@@ -358,7 +358,7 @@ $(function(){
             alert(err)
         }
     });
-
+    var isFill=true;
     //初始化课程章节列表
     $.ajax({
         type:'get',
@@ -368,12 +368,13 @@ $(function(){
         success:function(data){
 //            console.log(data.data)
             if(data.data.length==0){
-
+                isFill=false;
             }else {
                 $('.none-sj-list').hide();
 //                $('.done-sj-list')
+                isFill=true;
                 for(var i=0;i<data.data.length;i++){
-                    var li=$('<li class="chapter"> <h4 class="pull-left"> <span class="glyphicon glyphicon-triangle-right xl-toggle " aria-hidden="true"></span> <span class="chapter_name"><input type="text" value="'+data.data[i].c_content+'" style="border: none"></span> </h4> <div class="del_chapter pull-right"><span class="glyphicon glyphicon-trash del-t"></span></div> <ul class="unit" > <li class="unit-list"> <h4 class="pull-left"> <span class="chapter_name">单元</span> </h4> <div class="unit_introduce" style="margin-top: 60px">单元介绍：<input type="text" placeholder="单元介绍" value="'+data.data[i].capter_introduce+'"> </div> <div class="file_upload"> <div style=""> <form class="uploadForm" enctype="multipart/form-data"> <input type="file" name="file"  class="file1" required="required"> </form> <button class="btn-primary btn video_upload">课件上传</button> </div> <video src="'+data.data[i].c_url+'" controls></video></div> </li> </ul> </li>')
+                    var li=$('<li class="chapter"> <h4 class="pull-left"> <span class="glyphicon glyphicon-triangle-right xl-toggle " aria-hidden="true"></span> <span class="chapter_name"><input type="text" value="'+data.data[i].c_content+'" style="border: none"></span> </h4> <div class="del_chapter pull-right"><span class="glyphicon glyphicon-trash del-t"></span><span class="cid" style="display: none">'+data.data[i].id+'</span></div> <ul class="unit" > <li class="unit-list"> <h4 class="pull-left"> <span class="chapter_name">单元</span> </h4> <div class="unit_introduce" style="margin-top: 60px">单元介绍：<input type="text" placeholder="单元介绍" value="'+data.data[i].capter_introduce+'"> </div> <div class="file_upload"> <div style=""> <form class="uploadForm" enctype="multipart/form-data"> <input type="file" name="file"  class="file1" required="required"> </form> <button class="btn-primary btn video_upload">课件上传</button> </div> <video src="'+data.data[i].c_url+'" controls></video></div> </li> </ul> </li>')
                     $('.done-sj-list').append(li);
 
                 }
@@ -416,7 +417,7 @@ $(function(){
     });
 
 //初始化课程编辑信息
-    var isFill=true;
+
     $.ajax({
         type:'get',
         async:'false',
@@ -425,9 +426,9 @@ $(function(){
         success:function(data){
             if(data.data.length==0){
                 $('.normal').hide();
-                isFill=false;
+
             }else {
-                isFill=true;
+
                 $('.none').hide();
                 for(var i=0;i<data.data.length;i++){
                     var tr=$('<tr><td>'+data.data[i].name+'</td><td>'+data.data[i].sex+'</td><td>'+data.data[i].email+'</td><td>'+data.data[i].xiti_score+'</td></tr>');
@@ -523,6 +524,7 @@ $(function(){
     setTimeout(function(){
         $('.del-t').click(function(){
             var _this=$(this).parent().parent();
+            var _this_1=$(this);
             swal({
                 title:'警告',
                 text:'删除将无法找回该课程？',
@@ -533,13 +535,15 @@ $(function(){
                 if (isConfirm === true) {
                     _this.remove();
                     $.ajax({
-                        url
+                        type:'get',
+                        url:'http://localhost/studyApi/PhalApi/Public/?service=Course.removeCourseC',
+                        data:{'id':parseInt(_this_1.siblings('.cid').html())},
+                        success:function(data){
+                            console.log(_this_1.siblings('.cid').html())
+                        },
+                        error:function(err){alert(err)}
                     });
-                    swal(
-                            'Deleted!',
-                            'Your imaginary file has been deleted.',
-                            'success'
-                    );
+
 
                 }
             })
@@ -626,33 +630,70 @@ $(function(){
 
     //提交审核
     $('.sh_btn_1').click(function(){
-        $('.sj_list .chapter').each(function(x){
-            var data={
-                "c_id":getQueryString('c_no'),
-                "capter_id":getQueryString('c_no')+'_'+Number(Number(x)+Number(1)),
-                "c_content":$(this).find('.chapter_name input').val(),
-                "capter_introduce":$(this).find('.unit_introduce input').val(),
-                "c_url":$(this).find('.file_upload video').attr('src')
-            };
-            $.ajax({
-                type:'post',
-                url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourseChapter',
-                data:data,
-                success:function(){
-                    swal({
-                        title:'成功',
-                        text:'上传成功，等待管理员审核',
-                        type:'success',
-                        showCancelButton:true
-                    }).then(function(isconfirm){
-                        if(isconfirm==true){
-                            window.location.reload();
-                        }
-                    });
-                },
-                error:function(err){alert(err)}
-            });
-        });
+       if(isFill){
+           var dataArr1=[];
+           $('.done-sj-list .chapter').each(function(x){
+               var data={
+                   "c_id":getQueryString('c_no'),
+                   "capter_id":getQueryString('c_no')+'_'+Number(Number(x)+Number(1)),
+                   "c_content":$(this).find('.chapter_name input').val(),
+                   "capter_introduce":$(this).find('.unit_introduce input').val(),
+                   "c_url":$(this).find('.file_upload video').attr('src')
+               };
+               dataArr1.push(data)
+           });
+           $.ajax({
+               type:'post',
+               url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourseChapter',
+               async:false,
+               data:{'dataArr':dataArr1},
+               success:function(){
+                   swal({
+                       title:'成功',
+                       text:'上传成功，等待管理员审核',
+                       type:'success',
+                       showCancelButton:true
+                   }).then(function(isconfirm){
+                       if(isconfirm==true){
+                           window.location.reload();
+                       }
+                   });
+               },
+               error:function(err){alert(err)}
+           });
+       }else {
+           var dataArr2=[];
+           alert('2')
+           $('.none-sj-list .chapter').each(function(x){
+               var data={
+                   "c_id":getQueryString('c_no'),
+                   "capter_id":getQueryString('c_no')+'_'+Number(Number(x)+Number(1)),
+                   "c_content":$(this).find('.chapter_name input').val(),
+                   "capter_introduce":$(this).find('.unit_introduce input').val(),
+                   "c_url":$(this).find('.file_upload video').attr('src')
+               };
+               dataArr2.push(data)
+           });
+           $.ajax({
+               type:'post',
+               url:'http://localhost/studyApi/PhalApi/Public/?service=Course.addCourseChapter',
+               async:false,
+               data:{'dataArr':dataArr2},
+               success:function(){
+                   swal({
+                       title:'成功',
+                       text:'上传成功，等待管理员审核',
+                       type:'success',
+                       showCancelButton:true
+                   }).then(function(isconfirm){
+                       if(isconfirm==true){
+                           window.location.reload();
+                       }
+                   });
+               },
+               error:function(err){alert(err)}
+           });
+       }
     });
 })
 
